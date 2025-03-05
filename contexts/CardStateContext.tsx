@@ -1,14 +1,18 @@
-import { createContext, useState, ReactNode } from "react";
+import { createContext, useState, ReactNode, Dispatch, SetStateAction } from "react";
 
 interface CardStateContextType {
   addHC: string[];
-  setAddHC: (cards: string[]) => void;
+  setAddHC: Dispatch<SetStateAction<string[]>>;
   rmHC: string[];
-  setRmHC: (cards: string[]) => void;
+  setRmHC: Dispatch<SetStateAction<string[]>>;
   addWC: string[];
-  setAddWC: (cards: string[]) => void;
+  setAddWC: Dispatch<SetStateAction<string[]>>;
   rmWC: string[];
-  setRmWC: (cards: string[]) => void;
+  setRmWC: Dispatch<SetStateAction<string[]>>;
+  haveArr: string[];
+  setHaveArr: Dispatch<SetStateAction<string[]>>;
+  wantArr: string[];
+  setWantArr: Dispatch<SetStateAction<string[]>>;
 }
 
 const CardStateContext = createContext<CardStateContextType | null>(null);
@@ -18,9 +22,11 @@ const CardStateProvider = ({ children }: { children: ReactNode }) => {
   const [rmHC, setRmHC] = useState<string[]>([]);
   const [addWC, setAddWC] = useState<string[]>([]);
   const [rmWC, setRmWC] = useState<string[]>([]);
+  const [haveArr, setHaveArr] = useState<string[]>([]);
+  const [wantArr, setWantArr] = useState<string[]>([]);
 
   return (
-    <CardStateContext.Provider value={{ addHC, setAddHC, rmHC, setRmHC, addWC, setAddWC, rmWC, setRmWC }}>
+    <CardStateContext.Provider value={{ addHC, setAddHC, rmHC, setRmHC, addWC, setAddWC, rmWC, setRmWC, haveArr, setHaveArr, wantArr, setWantArr }}>
       {children}
     </CardStateContext.Provider>
   );

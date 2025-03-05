@@ -1,14 +1,13 @@
 'use client'
-import CardSearch from "../../../algolia/cardSearch";
-import UserContext from "../../../contexts/UserContext";
+import UserContext from "../../../../contexts/UserContext";
 import { useEffect, useState } from "react";
 import { getAuth, onAuthStateChanged, User } from "firebase/auth";
-import CheckUserButton from "../../../firebase/checkUserButton";
-import HaveWantCards from "../../../firebase/haveWantCards";
-import { Button } from "@/components/ui/button";
-import { CardStateProvider } from "../../../contexts/CardStateContext";
+import { CardStateProvider } from "../../../../contexts/CardStateContext";
+import SaveChangesButton from "../../../../firebase/saveChangesButton";
+import HaveCards from "../../../../firebase/haveCards";
+import HaveCardSearch from "../../../../algolia/haveCardSearch";
 
-const Listing = () => {
+const Home = () => {
   const auth = getAuth();
   const [user, setUser] = useState<User | null>(auth.currentUser);
 
@@ -28,17 +27,14 @@ const Listing = () => {
     <UserContext.Provider value={user}>
       <CardStateProvider> {/* Wrap components with the CardStateProvider */}
         <div className="flex-col">
-          <CheckUserButton />
           <div style={{ display: "flex", maxWidth: '75%', justifySelf: 'center'}}>
-            <CardSearch />
+            <HaveCardSearch />
           </div>
           <div>
-            <HaveWantCards />
+            <HaveCards />
           </div>
           <div>
-            <Button>
-              Save Changes
-            </Button>
+            <SaveChangesButton />
           </div>
         </div>
       </CardStateProvider>
@@ -46,4 +42,4 @@ const Listing = () => {
   );
 };
 
-export default Listing;
+export default Home;
