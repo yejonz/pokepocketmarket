@@ -12,7 +12,7 @@ export default function SaveChangesButton() {
     const user = useContext(UserContext)
     const cardState = useContext(CardStateContext)
 
-    // Cooldown for to save changes
+    // Cooldown for save changes
     let lastUpdate = 0;
     const RATE_LIMIT = 5000;
 
@@ -20,6 +20,7 @@ export default function SaveChangesButton() {
     async function saveChanges(user : User | null) {
       const now = Date.now();
       if (user && (now - lastUpdate > RATE_LIMIT)) {
+        lastUpdate = now
         const haveRef = doc(getFirestore(app), "users", "" + user?.uid);
 
         await updateDoc(haveRef, {
@@ -35,8 +36,10 @@ export default function SaveChangesButton() {
         await updateDoc(haveRef, {
           wantCards: arrayUnion(...cardState?.addWC || [])
         })
+      }
+      // display cooldown
+      else {
 
-        // console.log("saveChanges: " + cardState?.haveArr)
       }
     }
 

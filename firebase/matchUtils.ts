@@ -6,6 +6,8 @@ const db = getFirestore(app)
 interface UserData { 
     userId: string, 
     friendCode: string,
+    discord: string,
+    note: string,
     haveCards: string[],
     wantCards: string[]
 }
@@ -19,6 +21,8 @@ export async function fetchAllUsersData() {
         usersData[doc.id] = { 
             userId: doc.id, 
             friendCode: doc.data().friendCode,
+            discord: doc.data().discord,
+            note: doc.data().note,
             haveCards: doc.data().haveCards,
             wantCards: doc.data().wantCards
         } as UserData
@@ -42,6 +46,8 @@ export function findBestMatches(userId: string, allUsersData: { [key : string] :
             return {
                 userId: otherUser.userId,
                 friendCode: otherUser.friendCode,
+                discord: otherUser.discord,
+                note: otherUser.note,
                 userWantsOtherHas: userWantsOtherHas,
                 userHasOtherWants: userHasOtherWants
             }

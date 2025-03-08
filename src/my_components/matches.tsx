@@ -44,7 +44,7 @@ export default function Matches() {
     return (
         <div>
             <ol style={{display: "flex", flexDirection: "column"}}>
-                {(matches || []).map((data) => (
+                {(matches?.slice(0, 10) || []).map((data) => (
                     <li key={data.userId}>
                         <MatchDisplay data={data} />
                     </li>
