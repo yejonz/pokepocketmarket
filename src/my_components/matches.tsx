@@ -8,6 +8,8 @@ import MatchDisplay from "./matchDisplay";
 interface MatchData { 
     userId: string, 
     friendCode: string,
+    discord: string,
+    note: string,
     userWantsOtherHas: string[],
     userHasOtherWants: string[]
 }

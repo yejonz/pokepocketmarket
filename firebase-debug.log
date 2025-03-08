@@ -1,81 +1,81 @@
-[debug] [2025-03-08T03:04:22.638Z] ----------------------------------------------------------------------
-[debug] [2025-03-08T03:04:22.645Z] Command:       /Users/jonathanye/.nvm/versions/node/v20.15.1/bin/node /Users/jonathanye/.nvm/versions/node/v20.15.1/bin/firebase deploy --only functions
-[debug] [2025-03-08T03:04:22.645Z] CLI Version:   13.31.2
-[debug] [2025-03-08T03:04:22.645Z] Platform:      darwin
-[debug] [2025-03-08T03:04:22.645Z] Node Version:  v20.15.1
-[debug] [2025-03-08T03:04:22.645Z] Time:          Fri Mar 07 2025 19:04:22 GMT-0800 (Pacific Standard Time)
-[debug] [2025-03-08T03:04:22.645Z] ----------------------------------------------------------------------
+[debug] [2025-03-08T03:10:12.774Z] ----------------------------------------------------------------------
+[debug] [2025-03-08T03:10:12.780Z] Command:       /Users/jonathanye/.nvm/versions/node/v20.15.1/bin/node /Users/jonathanye/.nvm/versions/node/v20.15.1/bin/firebase deploy --only functions
+[debug] [2025-03-08T03:10:12.781Z] CLI Version:   13.31.2
+[debug] [2025-03-08T03:10:12.781Z] Platform:      darwin
+[debug] [2025-03-08T03:10:12.781Z] Node Version:  v20.15.1
+[debug] [2025-03-08T03:10:12.781Z] Time:          Fri Mar 07 2025 19:10:12 GMT-0800 (Pacific Standard Time)
+[debug] [2025-03-08T03:10:12.781Z] ----------------------------------------------------------------------
 [debug] 
-[debug] [2025-03-08T03:04:22.751Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
-[debug] [2025-03-08T03:04:22.751Z] > authorizing via signed-in user (yejonz@gmail.com)
-[debug] [2025-03-08T03:04:22.751Z] [iam] checking project pokepocketmarket for permissions ["cloudfunctions.functions.create","cloudfunctions.functions.delete","cloudfunctions.functions.get","cloudfunctions.functions.list","cloudfunctions.functions.update","cloudfunctions.operations.get","firebase.projects.get"]
-[debug] [2025-03-08T03:04:22.752Z] Checked if tokens are valid: true, expires at: 1741406546958
-[debug] [2025-03-08T03:04:22.752Z] Checked if tokens are valid: true, expires at: 1741406546958
-[debug] [2025-03-08T03:04:22.752Z] >>> [apiv2][query] POST https://cloudresourcemanager.googleapis.com/v1/projects/pokepocketmarket:testIamPermissions [none]
-[debug] [2025-03-08T03:04:22.752Z] >>> [apiv2][(partial)header] POST https://cloudresourcemanager.googleapis.com/v1/projects/pokepocketmarket:testIamPermissions x-goog-quota-user=projects/pokepocketmarket
-[debug] [2025-03-08T03:04:22.752Z] >>> [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/pokepocketmarket:testIamPermissions {"permissions":["cloudfunctions.functions.create","cloudfunctions.functions.delete","cloudfunctions.functions.get","cloudfunctions.functions.list","cloudfunctions.functions.update","cloudfunctions.operations.get","firebase.projects.get"]}
-[debug] [2025-03-08T03:04:22.878Z] <<< [apiv2][status] POST https://cloudresourcemanager.googleapis.com/v1/projects/pokepocketmarket:testIamPermissions 200
-[debug] [2025-03-08T03:04:22.878Z] <<< [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/pokepocketmarket:testIamPermissions {"permissions":["cloudfunctions.functions.create","cloudfunctions.functions.delete","cloudfunctions.functions.get","cloudfunctions.functions.list","cloudfunctions.functions.update","cloudfunctions.operations.get","firebase.projects.get"]}
-[debug] [2025-03-08T03:04:22.878Z] Checked if tokens are valid: true, expires at: 1741406546958
-[debug] [2025-03-08T03:04:22.878Z] Checked if tokens are valid: true, expires at: 1741406546958
-[debug] [2025-03-08T03:04:22.878Z] >>> [apiv2][query] POST https://iam.googleapis.com/v1/projects/pokepocketmarket/serviceAccounts/pokepocketmarket@appspot.gserviceaccount.com:testIamPermissions [none]
-[debug] [2025-03-08T03:04:22.878Z] >>> [apiv2][body] POST https://iam.googleapis.com/v1/projects/pokepocketmarket/serviceAccounts/pokepocketmarket@appspot.gserviceaccount.com:testIamPermissions {"permissions":["iam.serviceAccounts.actAs"]}
-[debug] [2025-03-08T03:04:23.012Z] <<< [apiv2][status] POST https://iam.googleapis.com/v1/projects/pokepocketmarket/serviceAccounts/pokepocketmarket@appspot.gserviceaccount.com:testIamPermissions 200
-[debug] [2025-03-08T03:04:23.012Z] <<< [apiv2][body] POST https://iam.googleapis.com/v1/projects/pokepocketmarket/serviceAccounts/pokepocketmarket@appspot.gserviceaccount.com:testIamPermissions {"permissions":["iam.serviceAccounts.actAs"]}
+[debug] [2025-03-08T03:10:12.874Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2025-03-08T03:10:12.874Z] > authorizing via signed-in user (yejonz@gmail.com)
+[debug] [2025-03-08T03:10:12.874Z] [iam] checking project pokepocketmarket for permissions ["cloudfunctions.functions.create","cloudfunctions.functions.delete","cloudfunctions.functions.get","cloudfunctions.functions.list","cloudfunctions.functions.update","cloudfunctions.operations.get","firebase.projects.get"]
+[debug] [2025-03-08T03:10:12.874Z] Checked if tokens are valid: true, expires at: 1741406546958
+[debug] [2025-03-08T03:10:12.874Z] Checked if tokens are valid: true, expires at: 1741406546958
+[debug] [2025-03-08T03:10:12.875Z] >>> [apiv2][query] POST https://cloudresourcemanager.googleapis.com/v1/projects/pokepocketmarket:testIamPermissions [none]
+[debug] [2025-03-08T03:10:12.875Z] >>> [apiv2][(partial)header] POST https://cloudresourcemanager.googleapis.com/v1/projects/pokepocketmarket:testIamPermissions x-goog-quota-user=projects/pokepocketmarket
+[debug] [2025-03-08T03:10:12.875Z] >>> [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/pokepocketmarket:testIamPermissions {"permissions":["cloudfunctions.functions.create","cloudfunctions.functions.delete","cloudfunctions.functions.get","cloudfunctions.functions.list","cloudfunctions.functions.update","cloudfunctions.operations.get","firebase.projects.get"]}
+[debug] [2025-03-08T03:10:13.008Z] <<< [apiv2][status] POST https://cloudresourcemanager.googleapis.com/v1/projects/pokepocketmarket:testIamPermissions 200
+[debug] [2025-03-08T03:10:13.008Z] <<< [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/pokepocketmarket:testIamPermissions {"permissions":["cloudfunctions.functions.create","cloudfunctions.functions.delete","cloudfunctions.functions.get","cloudfunctions.functions.list","cloudfunctions.functions.update","cloudfunctions.operations.get","firebase.projects.get"]}
+[debug] [2025-03-08T03:10:13.008Z] Checked if tokens are valid: true, expires at: 1741406546958
+[debug] [2025-03-08T03:10:13.008Z] Checked if tokens are valid: true, expires at: 1741406546958
+[debug] [2025-03-08T03:10:13.008Z] >>> [apiv2][query] POST https://iam.googleapis.com/v1/projects/pokepocketmarket/serviceAccounts/pokepocketmarket@appspot.gserviceaccount.com:testIamPermissions [none]
+[debug] [2025-03-08T03:10:13.008Z] >>> [apiv2][body] POST https://iam.googleapis.com/v1/projects/pokepocketmarket/serviceAccounts/pokepocketmarket@appspot.gserviceaccount.com:testIamPermissions {"permissions":["iam.serviceAccounts.actAs"]}
+[debug] [2025-03-08T03:10:13.150Z] <<< [apiv2][status] POST https://iam.googleapis.com/v1/projects/pokepocketmarket/serviceAccounts/pokepocketmarket@appspot.gserviceaccount.com:testIamPermissions 200
+[debug] [2025-03-08T03:10:13.150Z] <<< [apiv2][body] POST https://iam.googleapis.com/v1/projects/pokepocketmarket/serviceAccounts/pokepocketmarket@appspot.gserviceaccount.com:testIamPermissions {"permissions":["iam.serviceAccounts.actAs"]}
 [info] 
 [info] === Deploying to 'pokepocketmarket'...
 [info] 
 [info] i  deploying functions 
 [info] Running command: npm --prefix "$RESOURCE_DIR" run build
 [info] ✔  functions: Finished running predeploy script. 
-[debug] [2025-03-08T03:04:25.889Z] Checked if tokens are valid: true, expires at: 1741406546958
-[debug] [2025-03-08T03:04:25.889Z] Checked if tokens are valid: true, expires at: 1741406546958
-[debug] [2025-03-08T03:04:25.889Z] >>> [apiv2][query] GET https://cloudresourcemanager.googleapis.com/v1/projects/pokepocketmarket [none]
-[debug] [2025-03-08T03:04:25.988Z] <<< [apiv2][status] GET https://cloudresourcemanager.googleapis.com/v1/projects/pokepocketmarket 200
-[debug] [2025-03-08T03:04:25.988Z] <<< [apiv2][body] GET https://cloudresourcemanager.googleapis.com/v1/projects/pokepocketmarket {"projectNumber":"1038175142472","projectId":"pokepocketmarket","lifecycleState":"ACTIVE","name":"pokepocketmarket","labels":{"firebase":"enabled","firebase-core":"disabled"},"createTime":"2025-02-21T04:53:18.521815Z"}
+[debug] [2025-03-08T03:10:16.079Z] Checked if tokens are valid: true, expires at: 1741406546958
+[debug] [2025-03-08T03:10:16.079Z] Checked if tokens are valid: true, expires at: 1741406546958
+[debug] [2025-03-08T03:10:16.079Z] >>> [apiv2][query] GET https://cloudresourcemanager.googleapis.com/v1/projects/pokepocketmarket [none]
+[debug] [2025-03-08T03:10:16.183Z] <<< [apiv2][status] GET https://cloudresourcemanager.googleapis.com/v1/projects/pokepocketmarket 200
+[debug] [2025-03-08T03:10:16.183Z] <<< [apiv2][body] GET https://cloudresourcemanager.googleapis.com/v1/projects/pokepocketmarket {"projectNumber":"1038175142472","projectId":"pokepocketmarket","lifecycleState":"ACTIVE","name":"pokepocketmarket","labels":{"firebase":"enabled","firebase-core":"disabled"},"createTime":"2025-02-21T04:53:18.521815Z"}
 [info] i  functions: preparing codebase default for deployment 
 [info] i  functions: ensuring required API cloudfunctions.googleapis.com is enabled... 
-[debug] [2025-03-08T03:04:25.988Z] Checked if tokens are valid: true, expires at: 1741406546958
-[debug] [2025-03-08T03:04:25.988Z] Checked if tokens are valid: true, expires at: 1741406546958
-[debug] [2025-03-08T03:04:25.988Z] Checked if tokens are valid: true, expires at: 1741406546958
-[debug] [2025-03-08T03:04:25.988Z] Checked if tokens are valid: true, expires at: 1741406546958
+[debug] [2025-03-08T03:10:16.184Z] Checked if tokens are valid: true, expires at: 1741406546958
+[debug] [2025-03-08T03:10:16.184Z] Checked if tokens are valid: true, expires at: 1741406546958
+[debug] [2025-03-08T03:10:16.184Z] Checked if tokens are valid: true, expires at: 1741406546958
+[debug] [2025-03-08T03:10:16.184Z] Checked if tokens are valid: true, expires at: 1741406546958
 [info] i  functions: ensuring required API cloudbuild.googleapis.com is enabled... 
-[debug] [2025-03-08T03:04:25.989Z] Checked if tokens are valid: true, expires at: 1741406546958
-[debug] [2025-03-08T03:04:25.989Z] Checked if tokens are valid: true, expires at: 1741406546958
+[debug] [2025-03-08T03:10:16.184Z] Checked if tokens are valid: true, expires at: 1741406546958
+[debug] [2025-03-08T03:10:16.184Z] Checked if tokens are valid: true, expires at: 1741406546958
 [info] i  artifactregistry: ensuring required API artifactregistry.googleapis.com is enabled... 
-[debug] [2025-03-08T03:04:25.989Z] Checked if tokens are valid: true, expires at: 1741406546958
-[debug] [2025-03-08T03:04:25.989Z] Checked if tokens are valid: true, expires at: 1741406546958
-[debug] [2025-03-08T03:04:25.989Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/pokepocketmarket/services/cloudfunctions.googleapis.com [none]
-[debug] [2025-03-08T03:04:25.989Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/pokepocketmarket/services/cloudfunctions.googleapis.com x-goog-quota-user=projects/pokepocketmarket
-[debug] [2025-03-08T03:04:25.990Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/pokepocketmarket/services/runtimeconfig.googleapis.com [none]
-[debug] [2025-03-08T03:04:25.990Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/pokepocketmarket/services/runtimeconfig.googleapis.com x-goog-quota-user=projects/pokepocketmarket
-[debug] [2025-03-08T03:04:25.990Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/pokepocketmarket/services/cloudbuild.googleapis.com [none]
-[debug] [2025-03-08T03:04:25.990Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/pokepocketmarket/services/cloudbuild.googleapis.com x-goog-quota-user=projects/pokepocketmarket
-[debug] [2025-03-08T03:04:25.991Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/pokepocketmarket/services/artifactregistry.googleapis.com [none]
-[debug] [2025-03-08T03:04:25.991Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/pokepocketmarket/services/artifactregistry.googleapis.com x-goog-quota-user=projects/pokepocketmarket
-[debug] [2025-03-08T03:04:26.348Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/pokepocketmarket/services/runtimeconfig.googleapis.com 200
-[debug] [2025-03-08T03:04:26.348Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/pokepocketmarket/services/runtimeconfig.googleapis.com [omitted]
-[debug] [2025-03-08T03:04:26.356Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/pokepocketmarket/services/cloudbuild.googleapis.com 200
-[debug] [2025-03-08T03:04:26.356Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/pokepocketmarket/services/cloudbuild.googleapis.com [omitted]
+[debug] [2025-03-08T03:10:16.184Z] Checked if tokens are valid: true, expires at: 1741406546958
+[debug] [2025-03-08T03:10:16.184Z] Checked if tokens are valid: true, expires at: 1741406546958
+[debug] [2025-03-08T03:10:16.185Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/pokepocketmarket/services/cloudfunctions.googleapis.com [none]
+[debug] [2025-03-08T03:10:16.185Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/pokepocketmarket/services/cloudfunctions.googleapis.com x-goog-quota-user=projects/pokepocketmarket
+[debug] [2025-03-08T03:10:16.185Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/pokepocketmarket/services/runtimeconfig.googleapis.com [none]
+[debug] [2025-03-08T03:10:16.185Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/pokepocketmarket/services/runtimeconfig.googleapis.com x-goog-quota-user=projects/pokepocketmarket
+[debug] [2025-03-08T03:10:16.186Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/pokepocketmarket/services/cloudbuild.googleapis.com [none]
+[debug] [2025-03-08T03:10:16.186Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/pokepocketmarket/services/cloudbuild.googleapis.com x-goog-quota-user=projects/pokepocketmarket
+[debug] [2025-03-08T03:10:16.187Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/pokepocketmarket/services/artifactregistry.googleapis.com [none]
+[debug] [2025-03-08T03:10:16.187Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/pokepocketmarket/services/artifactregistry.googleapis.com x-goog-quota-user=projects/pokepocketmarket
+[debug] [2025-03-08T03:10:16.717Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/pokepocketmarket/services/runtimeconfig.googleapis.com 200
+[debug] [2025-03-08T03:10:16.717Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/pokepocketmarket/services/runtimeconfig.googleapis.com [omitted]
+[debug] [2025-03-08T03:10:16.718Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/pokepocketmarket/services/cloudbuild.googleapis.com 200
+[debug] [2025-03-08T03:10:16.719Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/pokepocketmarket/services/cloudbuild.googleapis.com [omitted]
 [info] ✔  functions: required API cloudbuild.googleapis.com is enabled 
-[debug] [2025-03-08T03:04:26.363Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/pokepocketmarket/services/artifactregistry.googleapis.com 200
-[debug] [2025-03-08T03:04:26.363Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/pokepocketmarket/services/artifactregistry.googleapis.com [omitted]
+[debug] [2025-03-08T03:10:16.720Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/pokepocketmarket/services/artifactregistry.googleapis.com 200
+[debug] [2025-03-08T03:10:16.720Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/pokepocketmarket/services/artifactregistry.googleapis.com [omitted]
 [info] ✔  artifactregistry: required API artifactregistry.googleapis.com is enabled 
-[debug] [2025-03-08T03:04:26.367Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/pokepocketmarket/services/cloudfunctions.googleapis.com 200
-[debug] [2025-03-08T03:04:26.367Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/pokepocketmarket/services/cloudfunctions.googleapis.com [omitted]
+[debug] [2025-03-08T03:10:16.721Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/pokepocketmarket/services/cloudfunctions.googleapis.com 200
+[debug] [2025-03-08T03:10:16.721Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/pokepocketmarket/services/cloudfunctions.googleapis.com [omitted]
 [info] ✔  functions: required API cloudfunctions.googleapis.com is enabled 
-[debug] [2025-03-08T03:04:26.367Z] Checked if tokens are valid: true, expires at: 1741406546958
-[debug] [2025-03-08T03:04:26.367Z] Checked if tokens are valid: true, expires at: 1741406546958
-[debug] [2025-03-08T03:04:26.367Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/pokepocketmarket/adminSdkConfig [none]
-[debug] [2025-03-08T03:04:26.617Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/pokepocketmarket/adminSdkConfig 200
-[debug] [2025-03-08T03:04:26.618Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/pokepocketmarket/adminSdkConfig {"projectId":"pokepocketmarket","storageBucket":"pokepocketmarket.firebasestorage.app"}
-[debug] [2025-03-08T03:04:26.619Z] Checked if tokens are valid: true, expires at: 1741406546958
-[debug] [2025-03-08T03:04:26.619Z] Checked if tokens are valid: true, expires at: 1741406546958
-[debug] [2025-03-08T03:04:26.619Z] >>> [apiv2][query] GET https://runtimeconfig.googleapis.com/v1beta1/projects/pokepocketmarket/configs [none]
-[debug] [2025-03-08T03:04:26.791Z] <<< [apiv2][status] GET https://runtimeconfig.googleapis.com/v1beta1/projects/pokepocketmarket/configs 200
-[debug] [2025-03-08T03:04:26.791Z] <<< [apiv2][body] GET https://runtimeconfig.googleapis.com/v1beta1/projects/pokepocketmarket/configs {}
-[debug] [2025-03-08T03:04:26.794Z] Validating nodejs source
-[debug] [2025-03-08T03:04:27.156Z] > [functions] package.json contents: {
+[debug] [2025-03-08T03:10:16.722Z] Checked if tokens are valid: true, expires at: 1741406546958
+[debug] [2025-03-08T03:10:16.722Z] Checked if tokens are valid: true, expires at: 1741406546958
+[debug] [2025-03-08T03:10:16.722Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/pokepocketmarket/adminSdkConfig [none]
+[debug] [2025-03-08T03:10:16.950Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/pokepocketmarket/adminSdkConfig 200
+[debug] [2025-03-08T03:10:16.951Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/pokepocketmarket/adminSdkConfig {"projectId":"pokepocketmarket","storageBucket":"pokepocketmarket.firebasestorage.app"}
+[debug] [2025-03-08T03:10:16.951Z] Checked if tokens are valid: true, expires at: 1741406546958
+[debug] [2025-03-08T03:10:16.951Z] Checked if tokens are valid: true, expires at: 1741406546958
+[debug] [2025-03-08T03:10:16.951Z] >>> [apiv2][query] GET https://runtimeconfig.googleapis.com/v1beta1/projects/pokepocketmarket/configs [none]
+[debug] [2025-03-08T03:10:17.176Z] <<< [apiv2][status] GET https://runtimeconfig.googleapis.com/v1beta1/projects/pokepocketmarket/configs 200
+[debug] [2025-03-08T03:10:17.176Z] <<< [apiv2][body] GET https://runtimeconfig.googleapis.com/v1beta1/projects/pokepocketmarket/configs {}
+[debug] [2025-03-08T03:10:17.179Z] Validating nodejs source
+[debug] [2025-03-08T03:10:17.524Z] > [functions] package.json contents: {
   "name": "functions",
   "scripts": {
     "build": "tsc",
@@ -100,91 +100,91 @@
   },
   "private": true
 }
-[debug] [2025-03-08T03:04:27.156Z] Building nodejs source
+[debug] [2025-03-08T03:10:17.524Z] Building nodejs source
 [info] i  functions: Loading and analyzing source code for codebase default to determine what to deploy 
-[debug] [2025-03-08T03:04:27.157Z] Could not find functions.yaml. Must use http discovery
-[debug] [2025-03-08T03:04:27.159Z] Found firebase-functions binary at '/Users/jonathanye/github/pokepocketmarket/functions/node_modules/.bin/firebase-functions'
-[info] Serving at port 8791
+[debug] [2025-03-08T03:10:17.525Z] Could not find functions.yaml. Must use http discovery
+[debug] [2025-03-08T03:10:17.528Z] Found firebase-functions binary at '/Users/jonathanye/github/pokepocketmarket/functions/node_modules/.bin/firebase-functions'
+[info] Serving at port 8132
 
-[debug] [2025-03-08T03:04:27.427Z] Got response from /__/functions.yaml {"endpoints":{"createUserDocument":{"platform":"gcfv1","availableMemoryMb":null,"timeoutSeconds":null,"minInstances":null,"maxInstances":null,"ingressSettings":null,"serviceAccountEmail":null,"vpc":null,"eventTrigger":{"eventType":"providers/firebase.auth/eventTypes/user.create","eventFilters":{"resource":"projects/pokepocketmarket"},"retry":false},"labels":{},"entryPoint":"createUserDocument"}},"specVersion":"v1alpha1","requiredAPIs":[],"extensions":{}}
-[debug] [2025-03-08T03:06:21.616Z] ----------------------------------------------------------------------
-[debug] [2025-03-08T03:06:21.621Z] Command:       /Users/jonathanye/.nvm/versions/node/v20.15.1/bin/node /Users/jonathanye/.nvm/versions/node/v20.15.1/bin/firebase deploy --only functions
-[debug] [2025-03-08T03:06:21.621Z] CLI Version:   13.31.2
-[debug] [2025-03-08T03:06:21.621Z] Platform:      darwin
-[debug] [2025-03-08T03:06:21.621Z] Node Version:  v20.15.1
-[debug] [2025-03-08T03:06:21.621Z] Time:          Fri Mar 07 2025 19:06:21 GMT-0800 (Pacific Standard Time)
-[debug] [2025-03-08T03:06:21.621Z] ----------------------------------------------------------------------
+[debug] [2025-03-08T03:10:17.798Z] Got response from /__/functions.yaml {"endpoints":{"createUserDocument":{"platform":"gcfv1","availableMemoryMb":null,"timeoutSeconds":null,"minInstances":null,"maxInstances":null,"ingressSettings":null,"serviceAccountEmail":null,"vpc":null,"eventTrigger":{"eventType":"providers/firebase.auth/eventTypes/user.create","eventFilters":{"resource":"projects/pokepocketmarket"},"retry":false},"labels":{},"entryPoint":"createUserDocument"}},"specVersion":"v1alpha1","requiredAPIs":[],"extensions":{}}
+[debug] [2025-03-08T03:14:07.739Z] ----------------------------------------------------------------------
+[debug] [2025-03-08T03:14:07.745Z] Command:       /Users/jonathanye/.nvm/versions/node/v20.15.1/bin/node /Users/jonathanye/.nvm/versions/node/v20.15.1/bin/firebase deploy --only functions
+[debug] [2025-03-08T03:14:07.745Z] CLI Version:   13.31.2
+[debug] [2025-03-08T03:14:07.745Z] Platform:      darwin
+[debug] [2025-03-08T03:14:07.745Z] Node Version:  v20.15.1
+[debug] [2025-03-08T03:14:07.745Z] Time:          Fri Mar 07 2025 19:14:07 GMT-0800 (Pacific Standard Time)
+[debug] [2025-03-08T03:14:07.745Z] ----------------------------------------------------------------------
 [debug] 
-[debug] [2025-03-08T03:06:21.711Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
-[debug] [2025-03-08T03:06:21.711Z] > authorizing via signed-in user (yejonz@gmail.com)
-[debug] [2025-03-08T03:06:21.711Z] [iam] checking project pokepocketmarket for permissions ["cloudfunctions.functions.create","cloudfunctions.functions.delete","cloudfunctions.functions.get","cloudfunctions.functions.list","cloudfunctions.functions.update","cloudfunctions.operations.get","firebase.projects.get"]
-[debug] [2025-03-08T03:06:21.712Z] Checked if tokens are valid: true, expires at: 1741406546958
-[debug] [2025-03-08T03:06:21.712Z] Checked if tokens are valid: true, expires at: 1741406546958
-[debug] [2025-03-08T03:06:21.712Z] >>> [apiv2][query] POST https://cloudresourcemanager.googleapis.com/v1/projects/pokepocketmarket:testIamPermissions [none]
-[debug] [2025-03-08T03:06:21.713Z] >>> [apiv2][(partial)header] POST https://cloudresourcemanager.googleapis.com/v1/projects/pokepocketmarket:testIamPermissions x-goog-quota-user=projects/pokepocketmarket
-[debug] [2025-03-08T03:06:21.713Z] >>> [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/pokepocketmarket:testIamPermissions {"permissions":["cloudfunctions.functions.create","cloudfunctions.functions.delete","cloudfunctions.functions.get","cloudfunctions.functions.list","cloudfunctions.functions.update","cloudfunctions.operations.get","firebase.projects.get"]}
-[debug] [2025-03-08T03:06:21.849Z] <<< [apiv2][status] POST https://cloudresourcemanager.googleapis.com/v1/projects/pokepocketmarket:testIamPermissions 200
-[debug] [2025-03-08T03:06:21.849Z] <<< [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/pokepocketmarket:testIamPermissions {"permissions":["cloudfunctions.functions.create","cloudfunctions.functions.delete","cloudfunctions.functions.get","cloudfunctions.functions.list","cloudfunctions.functions.update","cloudfunctions.operations.get","firebase.projects.get"]}
-[debug] [2025-03-08T03:06:21.849Z] Checked if tokens are valid: true, expires at: 1741406546958
-[debug] [2025-03-08T03:06:21.849Z] Checked if tokens are valid: true, expires at: 1741406546958
-[debug] [2025-03-08T03:06:21.849Z] >>> [apiv2][query] POST https://iam.googleapis.com/v1/projects/pokepocketmarket/serviceAccounts/pokepocketmarket@appspot.gserviceaccount.com:testIamPermissions [none]
-[debug] [2025-03-08T03:06:21.849Z] >>> [apiv2][body] POST https://iam.googleapis.com/v1/projects/pokepocketmarket/serviceAccounts/pokepocketmarket@appspot.gserviceaccount.com:testIamPermissions {"permissions":["iam.serviceAccounts.actAs"]}
-[debug] [2025-03-08T03:06:21.960Z] <<< [apiv2][status] POST https://iam.googleapis.com/v1/projects/pokepocketmarket/serviceAccounts/pokepocketmarket@appspot.gserviceaccount.com:testIamPermissions 200
-[debug] [2025-03-08T03:06:21.960Z] <<< [apiv2][body] POST https://iam.googleapis.com/v1/projects/pokepocketmarket/serviceAccounts/pokepocketmarket@appspot.gserviceaccount.com:testIamPermissions {"permissions":["iam.serviceAccounts.actAs"]}
+[debug] [2025-03-08T03:14:07.836Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2025-03-08T03:14:07.836Z] > authorizing via signed-in user (yejonz@gmail.com)
+[debug] [2025-03-08T03:14:07.836Z] [iam] checking project pokepocketmarket for permissions ["cloudfunctions.functions.create","cloudfunctions.functions.delete","cloudfunctions.functions.get","cloudfunctions.functions.list","cloudfunctions.functions.update","cloudfunctions.operations.get","firebase.projects.get"]
+[debug] [2025-03-08T03:14:07.836Z] Checked if tokens are valid: true, expires at: 1741406546958
+[debug] [2025-03-08T03:14:07.837Z] Checked if tokens are valid: true, expires at: 1741406546958
+[debug] [2025-03-08T03:14:07.837Z] >>> [apiv2][query] POST https://cloudresourcemanager.googleapis.com/v1/projects/pokepocketmarket:testIamPermissions [none]
+[debug] [2025-03-08T03:14:07.837Z] >>> [apiv2][(partial)header] POST https://cloudresourcemanager.googleapis.com/v1/projects/pokepocketmarket:testIamPermissions x-goog-quota-user=projects/pokepocketmarket
+[debug] [2025-03-08T03:14:07.837Z] >>> [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/pokepocketmarket:testIamPermissions {"permissions":["cloudfunctions.functions.create","cloudfunctions.functions.delete","cloudfunctions.functions.get","cloudfunctions.functions.list","cloudfunctions.functions.update","cloudfunctions.operations.get","firebase.projects.get"]}
+[debug] [2025-03-08T03:14:08.174Z] <<< [apiv2][status] POST https://cloudresourcemanager.googleapis.com/v1/projects/pokepocketmarket:testIamPermissions 200
+[debug] [2025-03-08T03:14:08.175Z] <<< [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/pokepocketmarket:testIamPermissions {"permissions":["cloudfunctions.functions.create","cloudfunctions.functions.delete","cloudfunctions.functions.get","cloudfunctions.functions.list","cloudfunctions.functions.update","cloudfunctions.operations.get","firebase.projects.get"]}
+[debug] [2025-03-08T03:14:08.176Z] Checked if tokens are valid: true, expires at: 1741406546958
+[debug] [2025-03-08T03:14:08.176Z] Checked if tokens are valid: true, expires at: 1741406546958
+[debug] [2025-03-08T03:14:08.176Z] >>> [apiv2][query] POST https://iam.googleapis.com/v1/projects/pokepocketmarket/serviceAccounts/pokepocketmarket@appspot.gserviceaccount.com:testIamPermissions [none]
+[debug] [2025-03-08T03:14:08.176Z] >>> [apiv2][body] POST https://iam.googleapis.com/v1/projects/pokepocketmarket/serviceAccounts/pokepocketmarket@appspot.gserviceaccount.com:testIamPermissions {"permissions":["iam.serviceAccounts.actAs"]}
+[debug] [2025-03-08T03:14:08.379Z] <<< [apiv2][status] POST https://iam.googleapis.com/v1/projects/pokepocketmarket/serviceAccounts/pokepocketmarket@appspot.gserviceaccount.com:testIamPermissions 200
+[debug] [2025-03-08T03:14:08.379Z] <<< [apiv2][body] POST https://iam.googleapis.com/v1/projects/pokepocketmarket/serviceAccounts/pokepocketmarket@appspot.gserviceaccount.com:testIamPermissions {"permissions":["iam.serviceAccounts.actAs"]}
 [info] 
 [info] === Deploying to 'pokepocketmarket'...
 [info] 
 [info] i  deploying functions 
 [info] Running command: npm --prefix "$RESOURCE_DIR" run build
 [info] ✔  functions: Finished running predeploy script. 
-[debug] [2025-03-08T03:06:24.980Z] Checked if tokens are valid: true, expires at: 1741406546958
-[debug] [2025-03-08T03:06:24.980Z] Checked if tokens are valid: true, expires at: 1741406546958
-[debug] [2025-03-08T03:06:24.980Z] >>> [apiv2][query] GET https://cloudresourcemanager.googleapis.com/v1/projects/pokepocketmarket [none]
-[debug] [2025-03-08T03:06:25.082Z] <<< [apiv2][status] GET https://cloudresourcemanager.googleapis.com/v1/projects/pokepocketmarket 200
-[debug] [2025-03-08T03:06:25.082Z] <<< [apiv2][body] GET https://cloudresourcemanager.googleapis.com/v1/projects/pokepocketmarket {"projectNumber":"1038175142472","projectId":"pokepocketmarket","lifecycleState":"ACTIVE","name":"pokepocketmarket","labels":{"firebase":"enabled","firebase-core":"disabled"},"createTime":"2025-02-21T04:53:18.521815Z"}
+[debug] [2025-03-08T03:14:11.334Z] Checked if tokens are valid: true, expires at: 1741406546958
+[debug] [2025-03-08T03:14:11.334Z] Checked if tokens are valid: true, expires at: 1741406546958
+[debug] [2025-03-08T03:14:11.334Z] >>> [apiv2][query] GET https://cloudresourcemanager.googleapis.com/v1/projects/pokepocketmarket [none]
+[debug] [2025-03-08T03:14:11.443Z] <<< [apiv2][status] GET https://cloudresourcemanager.googleapis.com/v1/projects/pokepocketmarket 200
+[debug] [2025-03-08T03:14:11.443Z] <<< [apiv2][body] GET https://cloudresourcemanager.googleapis.com/v1/projects/pokepocketmarket {"projectNumber":"1038175142472","projectId":"pokepocketmarket","lifecycleState":"ACTIVE","name":"pokepocketmarket","labels":{"firebase":"enabled","firebase-core":"disabled"},"createTime":"2025-02-21T04:53:18.521815Z"}
 [info] i  functions: preparing codebase default for deployment 
 [info] i  functions: ensuring required API cloudfunctions.googleapis.com is enabled... 
-[debug] [2025-03-08T03:06:25.082Z] Checked if tokens are valid: true, expires at: 1741406546958
-[debug] [2025-03-08T03:06:25.082Z] Checked if tokens are valid: true, expires at: 1741406546958
-[debug] [2025-03-08T03:06:25.082Z] Checked if tokens are valid: true, expires at: 1741406546958
-[debug] [2025-03-08T03:06:25.082Z] Checked if tokens are valid: true, expires at: 1741406546958
+[debug] [2025-03-08T03:14:11.443Z] Checked if tokens are valid: true, expires at: 1741406546958
+[debug] [2025-03-08T03:14:11.443Z] Checked if tokens are valid: true, expires at: 1741406546958
+[debug] [2025-03-08T03:14:11.443Z] Checked if tokens are valid: true, expires at: 1741406546958
+[debug] [2025-03-08T03:14:11.443Z] Checked if tokens are valid: true, expires at: 1741406546958
 [info] i  functions: ensuring required API cloudbuild.googleapis.com is enabled... 
-[debug] [2025-03-08T03:06:25.083Z] Checked if tokens are valid: true, expires at: 1741406546958
-[debug] [2025-03-08T03:06:25.083Z] Checked if tokens are valid: true, expires at: 1741406546958
+[debug] [2025-03-08T03:14:11.444Z] Checked if tokens are valid: true, expires at: 1741406546958
+[debug] [2025-03-08T03:14:11.444Z] Checked if tokens are valid: true, expires at: 1741406546958
 [info] i  artifactregistry: ensuring required API artifactregistry.googleapis.com is enabled... 
-[debug] [2025-03-08T03:06:25.083Z] Checked if tokens are valid: true, expires at: 1741406546958
-[debug] [2025-03-08T03:06:25.083Z] Checked if tokens are valid: true, expires at: 1741406546958
-[debug] [2025-03-08T03:06:25.083Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/pokepocketmarket/services/cloudfunctions.googleapis.com [none]
-[debug] [2025-03-08T03:06:25.083Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/pokepocketmarket/services/cloudfunctions.googleapis.com x-goog-quota-user=projects/pokepocketmarket
-[debug] [2025-03-08T03:06:25.084Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/pokepocketmarket/services/runtimeconfig.googleapis.com [none]
-[debug] [2025-03-08T03:06:25.084Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/pokepocketmarket/services/runtimeconfig.googleapis.com x-goog-quota-user=projects/pokepocketmarket
-[debug] [2025-03-08T03:06:25.085Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/pokepocketmarket/services/cloudbuild.googleapis.com [none]
-[debug] [2025-03-08T03:06:25.085Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/pokepocketmarket/services/cloudbuild.googleapis.com x-goog-quota-user=projects/pokepocketmarket
-[debug] [2025-03-08T03:06:25.086Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/pokepocketmarket/services/artifactregistry.googleapis.com [none]
-[debug] [2025-03-08T03:06:25.086Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/pokepocketmarket/services/artifactregistry.googleapis.com x-goog-quota-user=projects/pokepocketmarket
-[debug] [2025-03-08T03:06:25.443Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/pokepocketmarket/services/runtimeconfig.googleapis.com 200
-[debug] [2025-03-08T03:06:25.444Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/pokepocketmarket/services/runtimeconfig.googleapis.com [omitted]
-[debug] [2025-03-08T03:06:25.450Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/pokepocketmarket/services/cloudfunctions.googleapis.com 200
-[debug] [2025-03-08T03:06:25.450Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/pokepocketmarket/services/cloudfunctions.googleapis.com [omitted]
-[info] ✔  functions: required API cloudfunctions.googleapis.com is enabled 
-[debug] [2025-03-08T03:06:25.462Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/pokepocketmarket/services/cloudbuild.googleapis.com 200
-[debug] [2025-03-08T03:06:25.462Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/pokepocketmarket/services/cloudbuild.googleapis.com [omitted]
-[info] ✔  functions: required API cloudbuild.googleapis.com is enabled 
-[debug] [2025-03-08T03:06:25.463Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/pokepocketmarket/services/artifactregistry.googleapis.com 200
-[debug] [2025-03-08T03:06:25.463Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/pokepocketmarket/services/artifactregistry.googleapis.com [omitted]
+[debug] [2025-03-08T03:14:11.444Z] Checked if tokens are valid: true, expires at: 1741406546958
+[debug] [2025-03-08T03:14:11.444Z] Checked if tokens are valid: true, expires at: 1741406546958
+[debug] [2025-03-08T03:14:11.444Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/pokepocketmarket/services/cloudfunctions.googleapis.com [none]
+[debug] [2025-03-08T03:14:11.444Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/pokepocketmarket/services/cloudfunctions.googleapis.com x-goog-quota-user=projects/pokepocketmarket
+[debug] [2025-03-08T03:14:11.445Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/pokepocketmarket/services/runtimeconfig.googleapis.com [none]
+[debug] [2025-03-08T03:14:11.445Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/pokepocketmarket/services/runtimeconfig.googleapis.com x-goog-quota-user=projects/pokepocketmarket
+[debug] [2025-03-08T03:14:11.445Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/pokepocketmarket/services/cloudbuild.googleapis.com [none]
+[debug] [2025-03-08T03:14:11.445Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/pokepocketmarket/services/cloudbuild.googleapis.com x-goog-quota-user=projects/pokepocketmarket
+[debug] [2025-03-08T03:14:11.446Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/pokepocketmarket/services/artifactregistry.googleapis.com [none]
+[debug] [2025-03-08T03:14:11.446Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/pokepocketmarket/services/artifactregistry.googleapis.com x-goog-quota-user=projects/pokepocketmarket
+[debug] [2025-03-08T03:14:11.658Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/pokepocketmarket/services/artifactregistry.googleapis.com 200
+[debug] [2025-03-08T03:14:11.658Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/pokepocketmarket/services/artifactregistry.googleapis.com [omitted]
 [info] ✔  artifactregistry: required API artifactregistry.googleapis.com is enabled 
-[debug] [2025-03-08T03:06:25.464Z] Checked if tokens are valid: true, expires at: 1741406546958
-[debug] [2025-03-08T03:06:25.464Z] Checked if tokens are valid: true, expires at: 1741406546958
-[debug] [2025-03-08T03:06:25.464Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/pokepocketmarket/adminSdkConfig [none]
-[debug] [2025-03-08T03:06:26.115Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/pokepocketmarket/adminSdkConfig 200
-[debug] [2025-03-08T03:06:26.116Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/pokepocketmarket/adminSdkConfig {"projectId":"pokepocketmarket","storageBucket":"pokepocketmarket.firebasestorage.app"}
-[debug] [2025-03-08T03:06:26.116Z] Checked if tokens are valid: true, expires at: 1741406546958
-[debug] [2025-03-08T03:06:26.116Z] Checked if tokens are valid: true, expires at: 1741406546958
-[debug] [2025-03-08T03:06:26.116Z] >>> [apiv2][query] GET https://runtimeconfig.googleapis.com/v1beta1/projects/pokepocketmarket/configs [none]
-[debug] [2025-03-08T03:06:26.285Z] <<< [apiv2][status] GET https://runtimeconfig.googleapis.com/v1beta1/projects/pokepocketmarket/configs 200
-[debug] [2025-03-08T03:06:26.285Z] <<< [apiv2][body] GET https://runtimeconfig.googleapis.com/v1beta1/projects/pokepocketmarket/configs {}
-[debug] [2025-03-08T03:06:26.286Z] Validating nodejs source
-[debug] [2025-03-08T03:06:26.611Z] > [functions] package.json contents: {
+[debug] [2025-03-08T03:14:11.887Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/pokepocketmarket/services/runtimeconfig.googleapis.com 200
+[debug] [2025-03-08T03:14:11.888Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/pokepocketmarket/services/runtimeconfig.googleapis.com [omitted]
+[debug] [2025-03-08T03:14:11.890Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/pokepocketmarket/services/cloudfunctions.googleapis.com 200
+[debug] [2025-03-08T03:14:11.890Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/pokepocketmarket/services/cloudfunctions.googleapis.com [omitted]
+[info] ✔  functions: required API cloudfunctions.googleapis.com is enabled 
+[debug] [2025-03-08T03:14:11.906Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/pokepocketmarket/services/cloudbuild.googleapis.com 200
+[debug] [2025-03-08T03:14:11.906Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/pokepocketmarket/services/cloudbuild.googleapis.com [omitted]
+[info] ✔  functions: required API cloudbuild.googleapis.com is enabled 
+[debug] [2025-03-08T03:14:11.907Z] Checked if tokens are valid: true, expires at: 1741406546958
+[debug] [2025-03-08T03:14:11.907Z] Checked if tokens are valid: true, expires at: 1741406546958
+[debug] [2025-03-08T03:14:11.907Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/pokepocketmarket/adminSdkConfig [none]
+[debug] [2025-03-08T03:14:12.436Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/pokepocketmarket/adminSdkConfig 200
+[debug] [2025-03-08T03:14:12.436Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/pokepocketmarket/adminSdkConfig {"projectId":"pokepocketmarket","storageBucket":"pokepocketmarket.firebasestorage.app"}
+[debug] [2025-03-08T03:14:12.437Z] Checked if tokens are valid: true, expires at: 1741406546958
+[debug] [2025-03-08T03:14:12.437Z] Checked if tokens are valid: true, expires at: 1741406546958
+[debug] [2025-03-08T03:14:12.437Z] >>> [apiv2][query] GET https://runtimeconfig.googleapis.com/v1beta1/projects/pokepocketmarket/configs [none]
+[debug] [2025-03-08T03:14:12.659Z] <<< [apiv2][status] GET https://runtimeconfig.googleapis.com/v1beta1/projects/pokepocketmarket/configs 200
+[debug] [2025-03-08T03:14:12.659Z] <<< [apiv2][body] GET https://runtimeconfig.googleapis.com/v1beta1/projects/pokepocketmarket/configs {}
+[debug] [2025-03-08T03:14:12.660Z] Validating nodejs source
+[debug] [2025-03-08T03:14:13.009Z] > [functions] package.json contents: {
   "name": "functions",
   "scripts": {
     "build": "tsc",
@@ -209,10 +209,263 @@
   },
   "private": true
 }
-[debug] [2025-03-08T03:06:26.611Z] Building nodejs source
+[debug] [2025-03-08T03:14:13.009Z] Building nodejs source
 [info] i  functions: Loading and analyzing source code for codebase default to determine what to deploy 
-[debug] [2025-03-08T03:06:26.611Z] Could not find functions.yaml. Must use http discovery
-[debug] [2025-03-08T03:06:26.614Z] Found firebase-functions binary at '/Users/jonathanye/github/pokepocketmarket/functions/node_modules/.bin/firebase-functions'
-[info] Serving at port 8642
+[debug] [2025-03-08T03:14:13.010Z] Could not find functions.yaml. Must use http discovery
+[debug] [2025-03-08T03:14:13.013Z] Found firebase-functions binary at '/Users/jonathanye/github/pokepocketmarket/functions/node_modules/.bin/firebase-functions'
+[info] Serving at port 8054
 
-[debug] [2025-03-08T03:06:26.881Z] Got response from /__/functions.yaml {"endpoints":{"createUserDocument":{"platform":"gcfv1","availableMemoryMb":null,"timeoutSeconds":null,"minInstances":null,"maxInstances":null,"ingressSettings":null,"serviceAccountEmail":null,"vpc":null,"eventTrigger":{"eventType":"providers/firebase.auth/eventTypes/user.create","eventFilters":{"resource":"projects/pokepocketmarket"},"retry":false},"labels":{},"entryPoint":"createUserDocument"}},"specVersion":"v1alpha1","requiredAPIs":[],"extensions":{}}
+[debug] [2025-03-08T03:20:53.673Z] ----------------------------------------------------------------------
+[debug] [2025-03-08T03:20:53.675Z] Command:       /Users/jonathanye/.nvm/versions/node/v20.15.1/bin/node /Users/jonathanye/.nvm/versions/node/v20.15.1/bin/firebase deploy --only functions
+[debug] [2025-03-08T03:20:53.675Z] CLI Version:   13.31.2
+[debug] [2025-03-08T03:20:53.675Z] Platform:      darwin
+[debug] [2025-03-08T03:20:53.675Z] Node Version:  v20.15.1
+[debug] [2025-03-08T03:20:53.675Z] Time:          Fri Mar 07 2025 19:20:53 GMT-0800 (Pacific Standard Time)
+[debug] [2025-03-08T03:20:53.675Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2025-03-08T03:20:53.767Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2025-03-08T03:20:53.768Z] > authorizing via signed-in user (yejonz@gmail.com)
+[debug] [2025-03-08T03:20:53.768Z] [iam] checking project pokepocketmarket for permissions ["cloudfunctions.functions.create","cloudfunctions.functions.delete","cloudfunctions.functions.get","cloudfunctions.functions.list","cloudfunctions.functions.update","cloudfunctions.operations.get","firebase.projects.get"]
+[debug] [2025-03-08T03:20:53.768Z] Checked if tokens are valid: true, expires at: 1741406546958
+[debug] [2025-03-08T03:20:53.768Z] Checked if tokens are valid: true, expires at: 1741406546958
+[debug] [2025-03-08T03:20:53.769Z] >>> [apiv2][query] POST https://cloudresourcemanager.googleapis.com/v1/projects/pokepocketmarket:testIamPermissions [none]
+[debug] [2025-03-08T03:20:53.769Z] >>> [apiv2][(partial)header] POST https://cloudresourcemanager.googleapis.com/v1/projects/pokepocketmarket:testIamPermissions x-goog-quota-user=projects/pokepocketmarket
+[debug] [2025-03-08T03:20:53.769Z] >>> [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/pokepocketmarket:testIamPermissions {"permissions":["cloudfunctions.functions.create","cloudfunctions.functions.delete","cloudfunctions.functions.get","cloudfunctions.functions.list","cloudfunctions.functions.update","cloudfunctions.operations.get","firebase.projects.get"]}
+[debug] [2025-03-08T03:20:53.897Z] <<< [apiv2][status] POST https://cloudresourcemanager.googleapis.com/v1/projects/pokepocketmarket:testIamPermissions 200
+[debug] [2025-03-08T03:20:53.897Z] <<< [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/pokepocketmarket:testIamPermissions {"permissions":["cloudfunctions.functions.create","cloudfunctions.functions.delete","cloudfunctions.functions.get","cloudfunctions.functions.list","cloudfunctions.functions.update","cloudfunctions.operations.get","firebase.projects.get"]}
+[debug] [2025-03-08T03:20:53.898Z] Checked if tokens are valid: true, expires at: 1741406546958
+[debug] [2025-03-08T03:20:53.898Z] Checked if tokens are valid: true, expires at: 1741406546958
+[debug] [2025-03-08T03:20:53.898Z] >>> [apiv2][query] POST https://iam.googleapis.com/v1/projects/pokepocketmarket/serviceAccounts/pokepocketmarket@appspot.gserviceaccount.com:testIamPermissions [none]
+[debug] [2025-03-08T03:20:53.898Z] >>> [apiv2][body] POST https://iam.googleapis.com/v1/projects/pokepocketmarket/serviceAccounts/pokepocketmarket@appspot.gserviceaccount.com:testIamPermissions {"permissions":["iam.serviceAccounts.actAs"]}
+[debug] [2025-03-08T03:20:54.038Z] <<< [apiv2][status] POST https://iam.googleapis.com/v1/projects/pokepocketmarket/serviceAccounts/pokepocketmarket@appspot.gserviceaccount.com:testIamPermissions 200
+[debug] [2025-03-08T03:20:54.038Z] <<< [apiv2][body] POST https://iam.googleapis.com/v1/projects/pokepocketmarket/serviceAccounts/pokepocketmarket@appspot.gserviceaccount.com:testIamPermissions {"permissions":["iam.serviceAccounts.actAs"]}
+[info] 
+[info] === Deploying to 'pokepocketmarket'...
+[info] 
+[info] i  deploying functions 
+[info] Running command: npm --prefix "$RESOURCE_DIR" run build
+[info] ✔  functions: Finished running predeploy script. 
+[debug] [2025-03-08T03:20:56.911Z] Checked if tokens are valid: true, expires at: 1741406546958
+[debug] [2025-03-08T03:20:56.911Z] Checked if tokens are valid: true, expires at: 1741406546958
+[debug] [2025-03-08T03:20:56.911Z] >>> [apiv2][query] GET https://cloudresourcemanager.googleapis.com/v1/projects/pokepocketmarket [none]
+[debug] [2025-03-08T03:20:57.008Z] <<< [apiv2][status] GET https://cloudresourcemanager.googleapis.com/v1/projects/pokepocketmarket 200
+[debug] [2025-03-08T03:20:57.008Z] <<< [apiv2][body] GET https://cloudresourcemanager.googleapis.com/v1/projects/pokepocketmarket {"projectNumber":"1038175142472","projectId":"pokepocketmarket","lifecycleState":"ACTIVE","name":"pokepocketmarket","labels":{"firebase":"enabled","firebase-core":"disabled"},"createTime":"2025-02-21T04:53:18.521815Z"}
+[info] i  functions: preparing codebase default for deployment 
+[info] i  functions: ensuring required API cloudfunctions.googleapis.com is enabled... 
+[debug] [2025-03-08T03:20:57.009Z] Checked if tokens are valid: true, expires at: 1741406546958
+[debug] [2025-03-08T03:20:57.009Z] Checked if tokens are valid: true, expires at: 1741406546958
+[debug] [2025-03-08T03:20:57.009Z] Checked if tokens are valid: true, expires at: 1741406546958
+[debug] [2025-03-08T03:20:57.009Z] Checked if tokens are valid: true, expires at: 1741406546958
+[info] i  functions: ensuring required API cloudbuild.googleapis.com is enabled... 
+[debug] [2025-03-08T03:20:57.009Z] Checked if tokens are valid: true, expires at: 1741406546958
+[debug] [2025-03-08T03:20:57.009Z] Checked if tokens are valid: true, expires at: 1741406546958
+[info] i  artifactregistry: ensuring required API artifactregistry.googleapis.com is enabled... 
+[debug] [2025-03-08T03:20:57.009Z] Checked if tokens are valid: true, expires at: 1741406546958
+[debug] [2025-03-08T03:20:57.009Z] Checked if tokens are valid: true, expires at: 1741406546958
+[debug] [2025-03-08T03:20:57.009Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/pokepocketmarket/services/cloudfunctions.googleapis.com [none]
+[debug] [2025-03-08T03:20:57.009Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/pokepocketmarket/services/cloudfunctions.googleapis.com x-goog-quota-user=projects/pokepocketmarket
+[debug] [2025-03-08T03:20:57.010Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/pokepocketmarket/services/runtimeconfig.googleapis.com [none]
+[debug] [2025-03-08T03:20:57.010Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/pokepocketmarket/services/runtimeconfig.googleapis.com x-goog-quota-user=projects/pokepocketmarket
+[debug] [2025-03-08T03:20:57.011Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/pokepocketmarket/services/cloudbuild.googleapis.com [none]
+[debug] [2025-03-08T03:20:57.011Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/pokepocketmarket/services/cloudbuild.googleapis.com x-goog-quota-user=projects/pokepocketmarket
+[debug] [2025-03-08T03:20:57.012Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/pokepocketmarket/services/artifactregistry.googleapis.com [none]
+[debug] [2025-03-08T03:20:57.012Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/pokepocketmarket/services/artifactregistry.googleapis.com x-goog-quota-user=projects/pokepocketmarket
+[debug] [2025-03-08T03:20:57.389Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/pokepocketmarket/services/runtimeconfig.googleapis.com 200
+[debug] [2025-03-08T03:20:57.389Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/pokepocketmarket/services/runtimeconfig.googleapis.com [omitted]
+[debug] [2025-03-08T03:20:57.392Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/pokepocketmarket/services/cloudfunctions.googleapis.com 200
+[debug] [2025-03-08T03:20:57.392Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/pokepocketmarket/services/cloudfunctions.googleapis.com [omitted]
+[info] ✔  functions: required API cloudfunctions.googleapis.com is enabled 
+[debug] [2025-03-08T03:20:57.408Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/pokepocketmarket/services/cloudbuild.googleapis.com 200
+[debug] [2025-03-08T03:20:57.408Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/pokepocketmarket/services/cloudbuild.googleapis.com [omitted]
+[info] ✔  functions: required API cloudbuild.googleapis.com is enabled 
+[debug] [2025-03-08T03:20:57.420Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/pokepocketmarket/services/artifactregistry.googleapis.com 200
+[debug] [2025-03-08T03:20:57.420Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/pokepocketmarket/services/artifactregistry.googleapis.com [omitted]
+[info] ✔  artifactregistry: required API artifactregistry.googleapis.com is enabled 
+[debug] [2025-03-08T03:20:57.420Z] Checked if tokens are valid: true, expires at: 1741406546958
+[debug] [2025-03-08T03:20:57.420Z] Checked if tokens are valid: true, expires at: 1741406546958
+[debug] [2025-03-08T03:20:57.421Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/pokepocketmarket/adminSdkConfig [none]
+[debug] [2025-03-08T03:20:57.819Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/pokepocketmarket/adminSdkConfig 200
+[debug] [2025-03-08T03:20:57.820Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/pokepocketmarket/adminSdkConfig {"projectId":"pokepocketmarket","storageBucket":"pokepocketmarket.firebasestorage.app"}
+[debug] [2025-03-08T03:20:57.820Z] Checked if tokens are valid: true, expires at: 1741406546958
+[debug] [2025-03-08T03:20:57.820Z] Checked if tokens are valid: true, expires at: 1741406546958
+[debug] [2025-03-08T03:20:57.820Z] >>> [apiv2][query] GET https://runtimeconfig.googleapis.com/v1beta1/projects/pokepocketmarket/configs [none]
+[debug] [2025-03-08T03:20:57.992Z] <<< [apiv2][status] GET https://runtimeconfig.googleapis.com/v1beta1/projects/pokepocketmarket/configs 200
+[debug] [2025-03-08T03:20:57.992Z] <<< [apiv2][body] GET https://runtimeconfig.googleapis.com/v1beta1/projects/pokepocketmarket/configs {}
+[debug] [2025-03-08T03:20:57.994Z] Validating nodejs source
+[debug] [2025-03-08T03:20:58.401Z] > [functions] package.json contents: {
+  "name": "functions",
+  "scripts": {
+    "build": "tsc",
+    "build:watch": "tsc --watch",
+    "serve": "npm run build && firebase emulators:start --only functions",
+    "shell": "npm run build && firebase functions:shell",
+    "start": "npm run shell",
+    "deploy": "firebase deploy --only functions",
+    "logs": "firebase functions:log"
+  },
+  "engines": {
+    "node": "22"
+  },
+  "main": "lib/index.js",
+  "dependencies": {
+    "firebase-admin": "^12.6.0",
+    "firebase-functions": "^6.0.1"
+  },
+  "devDependencies": {
+    "typescript": "^4.9.0",
+    "firebase-functions-test": "^3.1.0"
+  },
+  "private": true
+}
+[debug] [2025-03-08T03:20:58.402Z] Building nodejs source
+[info] i  functions: Loading and analyzing source code for codebase default to determine what to deploy 
+[debug] [2025-03-08T03:20:58.402Z] Could not find functions.yaml. Must use http discovery
+[debug] [2025-03-08T03:20:58.405Z] Found firebase-functions binary at '/Users/jonathanye/github/pokepocketmarket/functions/node_modules/.bin/firebase-functions'
+[info] Serving at port 8534
+
+[debug] [2025-03-08T03:20:58.780Z] Got response from /__/functions.yaml {"endpoints":{"createUserDocument":{"platform":"gcfv1","availableMemoryMb":null,"timeoutSeconds":null,"minInstances":null,"maxInstances":null,"ingressSettings":null,"serviceAccountEmail":null,"vpc":null,"eventTrigger":{"eventType":"providers/firebase.auth/eventTypes/user.create","eventFilters":{"resource":"projects/pokepocketmarket"},"retry":false},"labels":{},"entryPoint":"createUserDocument"}},"specVersion":"v1alpha1","requiredAPIs":[],"extensions":{}}
+[debug] [2025-03-08T03:29:06.153Z] ----------------------------------------------------------------------
+[debug] [2025-03-08T03:29:06.187Z] Command:       /Users/jonathanye/.nvm/versions/node/v20.15.1/bin/node /Users/jonathanye/.nvm/versions/node/v20.15.1/bin/firebase deploy --only functions:createSendInbox
+[debug] [2025-03-08T03:29:06.188Z] CLI Version:   13.31.2
+[debug] [2025-03-08T03:29:06.188Z] Platform:      darwin
+[debug] [2025-03-08T03:29:06.188Z] Node Version:  v20.15.1
+[debug] [2025-03-08T03:29:06.188Z] Time:          Fri Mar 07 2025 19:29:06 GMT-0800 (Pacific Standard Time)
+[debug] [2025-03-08T03:29:06.188Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2025-03-08T03:29:06.287Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2025-03-08T03:29:06.287Z] > authorizing via signed-in user (yejonz@gmail.com)
+[debug] [2025-03-08T03:29:06.287Z] [iam] checking project pokepocketmarket for permissions ["cloudfunctions.functions.create","cloudfunctions.functions.delete","cloudfunctions.functions.get","cloudfunctions.functions.list","cloudfunctions.functions.update","cloudfunctions.operations.get","firebase.projects.get"]
+[debug] [2025-03-08T03:29:06.288Z] Checked if tokens are valid: true, expires at: 1741406546958
+[debug] [2025-03-08T03:29:06.288Z] Checked if tokens are valid: true, expires at: 1741406546958
+[debug] [2025-03-08T03:29:06.288Z] >>> [apiv2][query] POST https://cloudresourcemanager.googleapis.com/v1/projects/pokepocketmarket:testIamPermissions [none]
+[debug] [2025-03-08T03:29:06.288Z] >>> [apiv2][(partial)header] POST https://cloudresourcemanager.googleapis.com/v1/projects/pokepocketmarket:testIamPermissions x-goog-quota-user=projects/pokepocketmarket
+[debug] [2025-03-08T03:29:06.289Z] >>> [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/pokepocketmarket:testIamPermissions {"permissions":["cloudfunctions.functions.create","cloudfunctions.functions.delete","cloudfunctions.functions.get","cloudfunctions.functions.list","cloudfunctions.functions.update","cloudfunctions.operations.get","firebase.projects.get"]}
+[debug] [2025-03-08T03:29:06.426Z] <<< [apiv2][status] POST https://cloudresourcemanager.googleapis.com/v1/projects/pokepocketmarket:testIamPermissions 200
+[debug] [2025-03-08T03:29:06.426Z] <<< [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/pokepocketmarket:testIamPermissions {"permissions":["cloudfunctions.functions.create","cloudfunctions.functions.delete","cloudfunctions.functions.get","cloudfunctions.functions.list","cloudfunctions.functions.update","cloudfunctions.operations.get","firebase.projects.get"]}
+[debug] [2025-03-08T03:29:06.426Z] Checked if tokens are valid: true, expires at: 1741406546958
+[debug] [2025-03-08T03:29:06.426Z] Checked if tokens are valid: true, expires at: 1741406546958
+[debug] [2025-03-08T03:29:06.426Z] >>> [apiv2][query] POST https://iam.googleapis.com/v1/projects/pokepocketmarket/serviceAccounts/pokepocketmarket@appspot.gserviceaccount.com:testIamPermissions [none]
+[debug] [2025-03-08T03:29:06.426Z] >>> [apiv2][body] POST https://iam.googleapis.com/v1/projects/pokepocketmarket/serviceAccounts/pokepocketmarket@appspot.gserviceaccount.com:testIamPermissions {"permissions":["iam.serviceAccounts.actAs"]}
+[debug] [2025-03-08T03:29:06.614Z] <<< [apiv2][status] POST https://iam.googleapis.com/v1/projects/pokepocketmarket/serviceAccounts/pokepocketmarket@appspot.gserviceaccount.com:testIamPermissions 200
+[debug] [2025-03-08T03:29:06.614Z] <<< [apiv2][body] POST https://iam.googleapis.com/v1/projects/pokepocketmarket/serviceAccounts/pokepocketmarket@appspot.gserviceaccount.com:testIamPermissions {"permissions":["iam.serviceAccounts.actAs"]}
+[info] 
+[info] === Deploying to 'pokepocketmarket'...
+[info] 
+[info] i  deploying functions 
+[info] Running command: npm --prefix "$RESOURCE_DIR" run build
+[info] ✔  functions: Finished running predeploy script. 
+[debug] [2025-03-08T03:29:09.522Z] Checked if tokens are valid: true, expires at: 1741406546958
+[debug] [2025-03-08T03:29:09.523Z] Checked if tokens are valid: true, expires at: 1741406546958
+[debug] [2025-03-08T03:29:09.523Z] >>> [apiv2][query] GET https://cloudresourcemanager.googleapis.com/v1/projects/pokepocketmarket [none]
+[debug] [2025-03-08T03:29:09.626Z] <<< [apiv2][status] GET https://cloudresourcemanager.googleapis.com/v1/projects/pokepocketmarket 200
+[debug] [2025-03-08T03:29:09.627Z] <<< [apiv2][body] GET https://cloudresourcemanager.googleapis.com/v1/projects/pokepocketmarket {"projectNumber":"1038175142472","projectId":"pokepocketmarket","lifecycleState":"ACTIVE","name":"pokepocketmarket","labels":{"firebase":"enabled","firebase-core":"disabled"},"createTime":"2025-02-21T04:53:18.521815Z"}
+[info] i  functions: preparing codebase default for deployment 
+[info] i  functions: ensuring required API cloudfunctions.googleapis.com is enabled... 
+[debug] [2025-03-08T03:29:09.628Z] Checked if tokens are valid: true, expires at: 1741406546958
+[debug] [2025-03-08T03:29:09.628Z] Checked if tokens are valid: true, expires at: 1741406546958
+[debug] [2025-03-08T03:29:09.628Z] Checked if tokens are valid: true, expires at: 1741406546958
+[debug] [2025-03-08T03:29:09.628Z] Checked if tokens are valid: true, expires at: 1741406546958
+[info] i  functions: ensuring required API cloudbuild.googleapis.com is enabled... 
+[debug] [2025-03-08T03:29:09.628Z] Checked if tokens are valid: true, expires at: 1741406546958
+[debug] [2025-03-08T03:29:09.628Z] Checked if tokens are valid: true, expires at: 1741406546958
+[info] i  artifactregistry: ensuring required API artifactregistry.googleapis.com is enabled... 
+[debug] [2025-03-08T03:29:09.628Z] Checked if tokens are valid: true, expires at: 1741406546958
+[debug] [2025-03-08T03:29:09.628Z] Checked if tokens are valid: true, expires at: 1741406546958
+[debug] [2025-03-08T03:29:09.628Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/pokepocketmarket/services/cloudfunctions.googleapis.com [none]
+[debug] [2025-03-08T03:29:09.628Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/pokepocketmarket/services/cloudfunctions.googleapis.com x-goog-quota-user=projects/pokepocketmarket
+[debug] [2025-03-08T03:29:09.629Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/pokepocketmarket/services/runtimeconfig.googleapis.com [none]
+[debug] [2025-03-08T03:29:09.629Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/pokepocketmarket/services/runtimeconfig.googleapis.com x-goog-quota-user=projects/pokepocketmarket
+[debug] [2025-03-08T03:29:09.630Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/pokepocketmarket/services/cloudbuild.googleapis.com [none]
+[debug] [2025-03-08T03:29:09.630Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/pokepocketmarket/services/cloudbuild.googleapis.com x-goog-quota-user=projects/pokepocketmarket
+[debug] [2025-03-08T03:29:09.630Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/pokepocketmarket/services/artifactregistry.googleapis.com [none]
+[debug] [2025-03-08T03:29:09.630Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/pokepocketmarket/services/artifactregistry.googleapis.com x-goog-quota-user=projects/pokepocketmarket
+[debug] [2025-03-08T03:29:09.824Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/pokepocketmarket/services/artifactregistry.googleapis.com 200
+[debug] [2025-03-08T03:29:09.824Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/pokepocketmarket/services/artifactregistry.googleapis.com [omitted]
+[info] ✔  artifactregistry: required API artifactregistry.googleapis.com is enabled 
+[debug] [2025-03-08T03:29:10.023Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/pokepocketmarket/services/cloudbuild.googleapis.com 200
+[debug] [2025-03-08T03:29:10.023Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/pokepocketmarket/services/cloudbuild.googleapis.com [omitted]
+[info] ✔  functions: required API cloudbuild.googleapis.com is enabled 
+[debug] [2025-03-08T03:29:10.055Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/pokepocketmarket/services/runtimeconfig.googleapis.com 200
+[debug] [2025-03-08T03:29:10.055Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/pokepocketmarket/services/runtimeconfig.googleapis.com [omitted]
+[debug] [2025-03-08T03:29:10.056Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/pokepocketmarket/services/cloudfunctions.googleapis.com 200
+[debug] [2025-03-08T03:29:10.056Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/pokepocketmarket/services/cloudfunctions.googleapis.com [omitted]
+[info] ✔  functions: required API cloudfunctions.googleapis.com is enabled 
+[debug] [2025-03-08T03:29:10.057Z] Checked if tokens are valid: true, expires at: 1741406546958
+[debug] [2025-03-08T03:29:10.057Z] Checked if tokens are valid: true, expires at: 1741406546958
+[debug] [2025-03-08T03:29:10.057Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/pokepocketmarket/adminSdkConfig [none]
+[debug] [2025-03-08T03:29:10.665Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/pokepocketmarket/adminSdkConfig 200
+[debug] [2025-03-08T03:29:10.665Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/pokepocketmarket/adminSdkConfig {"projectId":"pokepocketmarket","storageBucket":"pokepocketmarket.firebasestorage.app"}
+[debug] [2025-03-08T03:29:10.665Z] Checked if tokens are valid: true, expires at: 1741406546958
+[debug] [2025-03-08T03:29:10.665Z] Checked if tokens are valid: true, expires at: 1741406546958
+[debug] [2025-03-08T03:29:10.665Z] >>> [apiv2][query] GET https://runtimeconfig.googleapis.com/v1beta1/projects/pokepocketmarket/configs [none]
+[debug] [2025-03-08T03:29:10.847Z] <<< [apiv2][status] GET https://runtimeconfig.googleapis.com/v1beta1/projects/pokepocketmarket/configs 200
+[debug] [2025-03-08T03:29:10.847Z] <<< [apiv2][body] GET https://runtimeconfig.googleapis.com/v1beta1/projects/pokepocketmarket/configs {}
+[debug] [2025-03-08T03:29:25.687Z] ----------------------------------------------------------------------
+[debug] [2025-03-08T03:29:25.691Z] Command:       /Users/jonathanye/.nvm/versions/node/v20.15.1/bin/node /Users/jonathanye/.nvm/versions/node/v20.15.1/bin/firebase deploy --only functions --force
+[debug] [2025-03-08T03:29:25.692Z] CLI Version:   13.31.2
+[debug] [2025-03-08T03:29:25.692Z] Platform:      darwin
+[debug] [2025-03-08T03:29:25.692Z] Node Version:  v20.15.1
+[debug] [2025-03-08T03:29:25.692Z] Time:          Fri Mar 07 2025 19:29:25 GMT-0800 (Pacific Standard Time)
+[debug] [2025-03-08T03:29:25.692Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2025-03-08T03:29:25.782Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2025-03-08T03:29:25.782Z] > authorizing via signed-in user (yejonz@gmail.com)
+[debug] [2025-03-08T03:29:25.782Z] [iam] checking project pokepocketmarket for permissions ["cloudfunctions.functions.create","cloudfunctions.functions.delete","cloudfunctions.functions.get","cloudfunctions.functions.list","cloudfunctions.functions.update","cloudfunctions.operations.get","firebase.projects.get"]
+[debug] [2025-03-08T03:29:25.783Z] Checked if tokens are valid: true, expires at: 1741406546958
+[debug] [2025-03-08T03:29:25.783Z] Checked if tokens are valid: true, expires at: 1741406546958
+[debug] [2025-03-08T03:29:25.784Z] >>> [apiv2][query] POST https://cloudresourcemanager.googleapis.com/v1/projects/pokepocketmarket:testIamPermissions [none]
+[debug] [2025-03-08T03:29:25.784Z] >>> [apiv2][(partial)header] POST https://cloudresourcemanager.googleapis.com/v1/projects/pokepocketmarket:testIamPermissions x-goog-quota-user=projects/pokepocketmarket
+[debug] [2025-03-08T03:29:25.784Z] >>> [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/pokepocketmarket:testIamPermissions {"permissions":["cloudfunctions.functions.create","cloudfunctions.functions.delete","cloudfunctions.functions.get","cloudfunctions.functions.list","cloudfunctions.functions.update","cloudfunctions.operations.get","firebase.projects.get"]}
+[debug] [2025-03-08T03:29:26.016Z] <<< [apiv2][status] POST https://cloudresourcemanager.googleapis.com/v1/projects/pokepocketmarket:testIamPermissions 200
+[debug] [2025-03-08T03:29:26.016Z] <<< [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/pokepocketmarket:testIamPermissions {"permissions":["cloudfunctions.functions.create","cloudfunctions.functions.delete","cloudfunctions.functions.get","cloudfunctions.functions.list","cloudfunctions.functions.update","cloudfunctions.operations.get","firebase.projects.get"]}
+[debug] [2025-03-08T03:29:26.017Z] Checked if tokens are valid: true, expires at: 1741406546958
+[debug] [2025-03-08T03:29:26.017Z] Checked if tokens are valid: true, expires at: 1741406546958
+[debug] [2025-03-08T03:29:26.017Z] >>> [apiv2][query] POST https://iam.googleapis.com/v1/projects/pokepocketmarket/serviceAccounts/pokepocketmarket@appspot.gserviceaccount.com:testIamPermissions [none]
+[debug] [2025-03-08T03:29:26.017Z] >>> [apiv2][body] POST https://iam.googleapis.com/v1/projects/pokepocketmarket/serviceAccounts/pokepocketmarket@appspot.gserviceaccount.com:testIamPermissions {"permissions":["iam.serviceAccounts.actAs"]}
+[debug] [2025-03-08T03:29:26.147Z] <<< [apiv2][status] POST https://iam.googleapis.com/v1/projects/pokepocketmarket/serviceAccounts/pokepocketmarket@appspot.gserviceaccount.com:testIamPermissions 200
+[debug] [2025-03-08T03:29:26.147Z] <<< [apiv2][body] POST https://iam.googleapis.com/v1/projects/pokepocketmarket/serviceAccounts/pokepocketmarket@appspot.gserviceaccount.com:testIamPermissions {"permissions":["iam.serviceAccounts.actAs"]}
+[info] 
+[info] === Deploying to 'pokepocketmarket'...
+[info] 
+[info] i  deploying functions 
+[info] Running command: npm --prefix "$RESOURCE_DIR" run build
+[info] ✔  functions: Finished running predeploy script. 
+[debug] [2025-03-08T03:29:29.100Z] Checked if tokens are valid: true, expires at: 1741406546958
+[debug] [2025-03-08T03:29:29.100Z] Checked if tokens are valid: true, expires at: 1741406546958
+[debug] [2025-03-08T03:29:29.100Z] >>> [apiv2][query] GET https://cloudresourcemanager.googleapis.com/v1/projects/pokepocketmarket [none]
+[debug] [2025-03-08T03:29:29.197Z] <<< [apiv2][status] GET https://cloudresourcemanager.googleapis.com/v1/projects/pokepocketmarket 200
+[debug] [2025-03-08T03:29:29.197Z] <<< [apiv2][body] GET https://cloudresourcemanager.googleapis.com/v1/projects/pokepocketmarket {"projectNumber":"1038175142472","projectId":"pokepocketmarket","lifecycleState":"ACTIVE","name":"pokepocketmarket","labels":{"firebase":"enabled","firebase-core":"disabled"},"createTime":"2025-02-21T04:53:18.521815Z"}
+[info] i  functions: preparing codebase default for deployment 
+[info] i  functions: ensuring required API cloudfunctions.googleapis.com is enabled... 
+[debug] [2025-03-08T03:29:29.198Z] Checked if tokens are valid: true, expires at: 1741406546958
+[debug] [2025-03-08T03:29:29.198Z] Checked if tokens are valid: true, expires at: 1741406546958
+[debug] [2025-03-08T03:29:29.198Z] Checked if tokens are valid: true, expires at: 1741406546958
+[debug] [2025-03-08T03:29:29.198Z] Checked if tokens are valid: true, expires at: 1741406546958
+[info] i  functions: ensuring required API cloudbuild.googleapis.com is enabled... 
+[debug] [2025-03-08T03:29:29.198Z] Checked if tokens are valid: true, expires at: 1741406546958
+[debug] [2025-03-08T03:29:29.198Z] Checked if tokens are valid: true, expires at: 1741406546958
+[info] i  artifactregistry: ensuring required API artifactregistry.googleapis.com is enabled... 
+[debug] [2025-03-08T03:29:29.198Z] Checked if tokens are valid: true, expires at: 1741406546958
+[debug] [2025-03-08T03:29:29.198Z] Checked if tokens are valid: true, expires at: 1741406546958
+[debug] [2025-03-08T03:29:29.198Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/pokepocketmarket/services/cloudfunctions.googleapis.com [none]
+[debug] [2025-03-08T03:29:29.198Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/pokepocketmarket/services/cloudfunctions.googleapis.com x-goog-quota-user=projects/pokepocketmarket
+[debug] [2025-03-08T03:29:29.199Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/pokepocketmarket/services/runtimeconfig.googleapis.com [none]
+[debug] [2025-03-08T03:29:29.199Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/pokepocketmarket/services/runtimeconfig.googleapis.com x-goog-quota-user=projects/pokepocketmarket
+[debug] [2025-03-08T03:29:29.200Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/pokepocketmarket/services/cloudbuild.googleapis.com [none]
+[debug] [2025-03-08T03:29:29.200Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/pokepocketmarket/services/cloudbuild.googleapis.com x-goog-quota-user=projects/pokepocketmarket
+[debug] [2025-03-08T03:29:29.201Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/pokepocketmarket/services/artifactregistry.googleapis.com [none]
+[debug] [2025-03-08T03:29:29.201Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/pokepocketmarket/services/artifactregistry.googleapis.com x-goog-quota-user=projects/pokepocketmarket
+[debug] [2025-03-08T03:29:29.742Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/pokepocketmarket/services/artifactregistry.googleapis.com 200
+[debug] [2025-03-08T03:29:29.743Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/pokepocketmarket/services/artifactregistry.googleapis.com [omitted]
+[info] ✔  artifactregistry: required API artifactregistry.googleapis.com is enabled 
+[debug] [2025-03-08T03:29:29.743Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/pokepocketmarket/services/runtimeconfig.googleapis.com 200
+[debug] [2025-03-08T03:29:29.743Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/pokepocketmarket/services/runtimeconfig.googleapis.com [omitted]
+[debug] [2025-03-08T03:29:29.744Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/pokepocketmarket/services/cloudbuild.googleapis.com 200
+[debug] [2025-03-08T03:29:29.744Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/pokepocketmarket/services/cloudbuild.googleapis.com [omitted]
+[info] ✔  functions: required API cloudbuild.googleapis.com is enabled 
+[debug] [2025-03-08T03:29:29.745Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/pokepocketmarket/services/cloudfunctions.googleapis.com 200
+[debug] [2025-03-08T03:29:29.745Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/pokepocketmarket/services/cloudfunctions.googleapis.com [omitted]
+[info] ✔  functions: required API cloudfunctions.googleapis.com is enabled 
+[debug] [2025-03-08T03:29:29.745Z] Checked if tokens are valid: true, expires at: 1741406546958
+[debug] [2025-03-08T03:29:29.745Z] Checked if tokens are valid: true, expires at: 1741406546958
+[debug] [2025-03-08T03:29:29.745Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/pokepocketmarket/adminSdkConfig [none]
