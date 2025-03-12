@@ -11,7 +11,7 @@ import { cn } from "@/lib/utils"
 import Link from "next/link"
 import React from "react"
 
-const components: { title: string; href: string }[] = [
+const listingComponents: { title: string; href: string }[] = [
   {
     title: "Have Cards",
     href: "/listing/have-cards",
@@ -20,6 +20,21 @@ const components: { title: string; href: string }[] = [
     title: "Want Cards",
     href: "/listing/want-cards",
   },
+  {
+    title: "Info",
+    href: "/listing/info",
+  },
+]
+
+const requestsComponents: { title: string; href: string }[] = [
+  {
+    title: "Inbox",
+    href: "/requests/inbox",
+  },
+  {
+    title: "Sent",
+    href: "/requests/sent",
+  }
 ]
 
 const ListItem = React.forwardRef<React.ElementRef<"a">, React.ComponentPropsWithoutRef<"a">>(
@@ -57,13 +72,27 @@ export default function MyNavigationMenu() {
           </NavigationMenuItem>
         </NavigationMenuList>
       </NavigationMenu>
+      <NavigationMenu>
+        <NavigationMenuList>
+          <NavigationMenuItem>
+            <NavigationMenuTrigger>Requests</NavigationMenuTrigger>
+            <NavigationMenuContent>
+              <ul className="flex flex-col w-20 gap-1 p-1">
+                {requestsComponents.map((component) => (
+                  <ListItem key={component.title} title={component.title} href={component.href}></ListItem>
+                ))}
+              </ul>
+            </NavigationMenuContent>
+          </NavigationMenuItem>
+        </NavigationMenuList>
+      </NavigationMenu>
       <NavigationMenu className="flex-1 justify-end">
         <NavigationMenuList>
           <NavigationMenuItem>
             <NavigationMenuTrigger>Listing</NavigationMenuTrigger>
             <NavigationMenuContent>
-              <ul className="flex flex-col w-[110px] gap-[3px] p-[4px]">
-                {components.map((component) => (
+              <ul className="flex flex-col w-28 gap-1 p-1">
+                {listingComponents.map((component) => (
                   <ListItem key={component.title} title={component.title} href={component.href}></ListItem>
                 ))}
               </ul>

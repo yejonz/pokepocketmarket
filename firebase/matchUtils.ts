@@ -1,4 +1,4 @@
-import { collection, getDocs, getFirestore } from "firebase/firestore";
+import { collection, getDocs, getFirestore, Timestamp } from "firebase/firestore";
 import { app } from "./firebaseConfig";
 
 const db = getFirestore(app)
@@ -8,6 +8,7 @@ interface UserData {
     friendCode: string,
     discord: string,
     note: string,
+    lastActive: Timestamp,
     haveCards: string[],
     wantCards: string[]
 }
@@ -23,6 +24,7 @@ export async function fetchAllUsersData() {
             friendCode: doc.data().friendCode,
             discord: doc.data().discord,
             note: doc.data().note,
+            lastActive: doc.data().lastActive,
             haveCards: doc.data().haveCards,
             wantCards: doc.data().wantCards
         } as UserData
@@ -48,6 +50,7 @@ export function findBestMatches(userId: string, allUsersData: { [key : string] :
                 friendCode: otherUser.friendCode,
                 discord: otherUser.discord,
                 note: otherUser.note,
+                lastActive: otherUser.lastActive,
                 userWantsOtherHas: userWantsOtherHas,
                 userHasOtherWants: userHasOtherWants
             }

@@ -11,8 +11,10 @@ import {
     AccordionTrigger,
 } from "@/components/ui/accordion";
 import { Button } from "@/components/ui/button";
-import { doc, getDoc, getFirestore } from "firebase/firestore";
+import { doc, getDoc, getFirestore, serverTimestamp, setDoc, Timestamp } from "firebase/firestore";
 import { app } from "../../firebase/firebaseConfig";
+import { getAuth } from "firebase/auth";
+import { timeAgo } from "./timeAgo";
 
 const db = getFirestore(app)
 
@@ -21,6 +23,7 @@ interface MatchData {
     friendCode: string,
     discord: string,
     note: string,
+    lastActive: Timestamp,
     userWantsOtherHas: string[],
     userHasOtherWants: string[]
 }
@@ -40,8 +43,8 @@ export default function MatchDisplay({ data }: { data: MatchData }) {
     const [accVal, setAccVal] = useState("")
     const [triggerWidth, setTriggerWidth] = useState(0)
     const [sendTradeMsg, setSendTradeMsg] = useState("")
-
     const triggerRef = useRef<HTMLDivElement>(null)
+    const auth = getAuth()
 
     useEffect(() => {
         if (selectHC || selectWC) {
@@ -72,9 +75,9 @@ export default function MatchDisplay({ data }: { data: MatchData }) {
         }  
     }
 
-    async function checkRarities(HC : string, WC : string) {
-        const docRefHC = doc(db, "cards", HC)
-        const docRefWC = doc(db, "cards", WC)
+    async function checkRarities() {
+        const docRefHC = doc(db, "cards", selectHC)
+        const docRefWC = doc(db, "cards", selectWC)
         const docSnapHC = await getDoc(docRefHC)
         const docSnapWC = await getDoc(docRefWC)
         if (docSnapHC.exists() && docSnapWC.exists()) {
@@ -82,6 +85,43 @@ export default function MatchDisplay({ data }: { data: MatchData }) {
         }
         else {
             return false
+        }
+    }
+
+    async function validTrade() {
+        const curUser = auth.currentUser
+        if (curUser != null) {
+            // get curUser's friendCode
+            const curUserRef = doc(db, 'users', curUser.uid)
+            const curUserDataSnap = await getDoc(curUserRef)
+            const curUserData = curUserDataSnap.data()
+
+            // set inbox request
+            const inboxRef = doc(db, 'requests', data.userId, 'inbox', curUser.uid)
+            await setDoc(inboxRef, {
+                friendCode: curUserData?.friendCode,
+                note: curUserData?.note,
+                discord: curUserData?.discord,
+                timestamp: serverTimestamp(),
+                haveCard: selectHC,
+                wantCard: selectWC
+            })
+
+            // set sent request
+            const sentRef = doc(db, 'requests', curUser.uid, 'sent', data.userId)
+            await setDoc(sentRef, {
+                friendCode: data.friendCode,
+                note: data.note,
+                discord: data.discord,
+                timestamp: serverTimestamp(),
+                haveCard: selectHC,
+                wantCard: selectWC
+            })
+
+            setSendTradeMsg("Trade sent successfully.")
+        }
+        else {
+            setSendTradeMsg("Could not authenticate user, try again.")
         }
     }
 
@@ -94,10 +134,14 @@ export default function MatchDisplay({ data }: { data: MatchData }) {
                 setSendTradeMsg("Two cards were not selected.")
             }
             else {
-                const rarityMatch = await checkRarities(selectHC, selectWC)
+                const rarityMatch = await checkRarities()
                 // rarities don't match
                 if (!rarityMatch) {
                     setSendTradeMsg("Both card rarities don't match.")
+                }
+                // we know we have 2 cards of same rarity, so this trade is valid
+                else {
+                    validTrade()
                 }
             } 
         }
@@ -110,6 +154,8 @@ export default function MatchDisplay({ data }: { data: MatchData }) {
         e.preventDefault()
         e.stopPropagation()
     }
+
+    
 
     return (
         <div className="m-4">
@@ -148,24 +194,27 @@ export default function MatchDisplay({ data }: { data: MatchData }) {
                     </div>
                     <AccordionContent style={{ width: triggerWidth }}>
                         <Card className="p-4 flex">
-                            <div className="w-1/2 box-border mr-4">
+                            <div className="w-1/2 mr-4">
                                 <p className="break-words">
                                     <b>Note: </b>{data.note}
                                 </p>
                             </div>
-                            <ol className="w-1/2 box-border ml-4">
+                            <ol className="w-1/2 ml-4">
                                 <li className="mb-2">
-                                    <b>Friend Code: </b>{data.friendCode}
+                                    <b>Last Active: </b>{timeAgo(data.lastActive.toDate())} 
                                 </li>
                                 <li className="mb-2 mt-2">
-                                    <b>Discord: </b>{data.discord}
+                                    <b>Friend Code: </b>{data.friendCode}
+                                </li>
+                                <li className="flex gap-1 mb-2 mt-2">
+                                    <b>Discord:</b>{data.discord ? data.discord : <p className="text-gray-400 italic">blank</p>}
                                 </li>
                                 <li className={sendTradeMsg ? "mt-2" : "mb-9 mt-2"}>
                                     <Button onClick={sendTrade}>
                                         Send Trade
                                     </Button>
                                     {sendTradeMsg && 
-                                    <div className="mt-2 mb-2 italic text-red-600">
+                                    <div className={sendTradeMsg == "Trade sent successfully." ? "mt-2 mb-2 italic text-green-600" : "mt-2 mb-2 italic text-red-600"}>
                                             {sendTradeMsg}
                                     </div>}
                                 </li>

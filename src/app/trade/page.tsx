@@ -9,41 +9,46 @@ import {
   PaginationPrevious,
 } from "@/components/ui/pagination"
 import MatchDisplay from "@/my_components/matchDisplay";
-import { getAuth } from "firebase/auth";
+import { getAuth, onAuthStateChanged } from "firebase/auth";
 import { useEffect, useState } from "react";
 import { fetchAllUsersData, findBestMatches } from "../../../firebase/matchUtils";
+import { getFirestore, Timestamp } from "firebase/firestore";
+import { app } from "../../../firebase/firebaseConfig";
+
+const db = getFirestore(app)
 
 interface MatchData { 
   userId: string, 
   friendCode: string,
   discord: string,
   note: string,
+  lastActive: Timestamp,
   userWantsOtherHas: string[],
   userHasOtherWants: string[]
 }
+
 // Parameters
 const matchesPerPage = 2
 
-const Home = () => {
+export default function Home () {
   const [pgnStart, setPgnStart] = useState(0)
   const [matches, setMatches] = useState<MatchData[]>()
   
   useEffect(() => {
-      const auth = getAuth()
-      async function fetchData() {
-          try {
-              const data = await fetchAllUsersData()
-              if (auth.currentUser != null) {
-                  const matchesData = findBestMatches(auth.currentUser.uid, data)
-                  console.log("matchesData being calculated")
-                  setMatches(matchesData)
-              }
-              
-          } catch (error) {
-              console.error("Failed to fetch user data: ", error);
-          }
+    const auth = getAuth();
+    const unsubscribe = onAuthStateChanged(auth, async (user) => {
+      if (user) {
+        try {
+          const data = await fetchAllUsersData();
+          const matchesData = findBestMatches(user.uid, data);
+          setMatches(matchesData);
+        } catch (error) {
+          console.error("Failed to fetch user data: ", error);
+        }
       }
-      fetchData();
+    });
+  
+    return () => unsubscribe();
   }, []);
 
   function pgnPrev() {
@@ -78,9 +83,6 @@ const Home = () => {
                 }}/>
               </PaginationItem>
             )}
-            <PaginationItem>
-              <PaginationEllipsis />
-            </PaginationItem>
             {pgnStart < ((matches || []).length - matchesPerPage) && (
               <PaginationItem>
                 <PaginationNext href="#" onClick={(e) => {
@@ -95,5 +97,3 @@ const Home = () => {
     </div>
   );
 };
-
-export default Home;

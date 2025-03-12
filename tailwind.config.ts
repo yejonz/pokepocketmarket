@@ -7,6 +7,7 @@ export default {
 	"./src/components/**/*.{js,ts,jsx,tsx,mdx}",
 	"./src/my_components/**/*.{js,ts,jsx,tsx,mdx}",
 	"./src/app/**/*.{js,ts,jsx,tsx,mdx}",
+	"./firebase/**/*.{js,ts,jsx,tsx,mdx}",
 	],
 	theme: {
     	extend: {

@@ -10,15 +10,14 @@ const applicationID = process.env.NEXT_PUBLIC_ALGOLIA_APPLICATIONID + "";
 const searchAPIKey = process.env.NEXT_PUBLIC_ALGOLIA_SEARCHAPIKEY + "";
 const searchClient = algoliasearch(applicationID, searchAPIKey);
 
-// Parameters
-const cardWidth = 12;
-const cardWidthMode = 'rem';
-const cardsPerRow = 5;
-
 function CustomHits(props: UseHitsProps) {
   // destructures UseHitsProps' hits into "items"
   const { items } = useHits(props)
   const cardState = useContext(CardStateContext)
+  const cardWidth = cardState?.cardWidth || 9;
+  const cardWidthMode = cardState?.cardWidthMode || 'rem';
+  const cardsPerRow = cardState?.cardsPerRow || 5;
+  
   return (
     <ol style={{ display: 'flex', flexWrap: 'wrap', width: `${cardWidth * cardsPerRow}${cardWidthMode}`}}>
       {items.map((hit) => (
@@ -50,6 +49,7 @@ export default function HaveCardSearch() {
           items={[
             { label: '5 per page', value: 5, default: true },
             { label: '10 per page', value: 10 },
+            { label: '15 per page', value: 15 },
             { label: '20 per page', value: 20 }
           ]}
         />

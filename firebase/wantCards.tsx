@@ -5,15 +5,13 @@ import { app } from "./firebaseConfig";
 import { doc, getDoc, getFirestore } from "firebase/firestore";
 import ImageFromStorage from "./imageFromStorage";
 
-// Parameters
-const cardWidth = 12;
-const cardWidthMode = 'rem';
-const cardsPerRow = 5;
-
 export default function WantCards() {
     // take in UserContext from parent
     const user = useContext(UserContext)
     const cardState = useContext(CardStateContext)
+    const cardWidth = cardState?.cardWidth || 9;
+    const cardWidthMode = cardState?.cardWidthMode || 'rem';
+    const cardsPerRow = cardState?.cardsPerRow || 5;
 
     // set wantCards once from the firestore
     useEffect(() => {
@@ -46,11 +44,9 @@ export default function WantCards() {
         console.log("wantArr: " + cardState?.wantArr)
     }
     
-    const combinedArr = [...cardState?.wantArr || [], ...cardState?.addWC || []]
-
     return (
         <ol style={{ display: 'flex', flexWrap: 'wrap', width: `${cardWidth * cardsPerRow}${cardWidthMode}`}}>
-            {combinedArr.map((card) => (
+            {cardState?.WCcombinedArr.map((card) => (
             <li
                 key={card}
                 // if card already in addWC, just remove it there

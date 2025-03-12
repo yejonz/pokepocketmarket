@@ -5,15 +5,13 @@ import { app } from "./firebaseConfig";
 import { doc, getDoc, getFirestore } from "firebase/firestore";
 import ImageFromStorage from "./imageFromStorage";
 
-// Parameters
-const cardWidth = 12;
-const cardWidthMode = 'rem';
-const cardsPerRow = 5;
-
 export default function HaveCards() {
     // take in UserContext from parent
     const user = useContext(UserContext)
     const cardState = useContext(CardStateContext)
+    const cardWidth = cardState?.cardWidth || 9;
+    const cardWidthMode = cardState?.cardWidthMode || 'rem';
+    const cardsPerRow = cardState?.cardsPerRow || 5;
 
     // set haveCards once from the firestore
     useEffect(() => {
@@ -32,7 +30,7 @@ export default function HaveCards() {
               console.error("Error fetching document:", error);
             }
           };
-          fetchHaveCards(); // Ensure the function is called here
+          fetchHaveCards();
         }
       }, [user]);
 
@@ -46,11 +44,9 @@ export default function HaveCards() {
         console.log("haveArr: " + cardState?.haveArr)
     }
     
-    const combinedArr = [...cardState?.haveArr || [], ...cardState?.addHC || []]
-
     return (
         <ol style={{ display: 'flex', flexWrap: 'wrap', width: `${cardWidth * cardsPerRow}${cardWidthMode}`}}>
-            {combinedArr.map((card) => (
+            {cardState?.HCcombinedArr.map((card) => (
             <li
                 key={card}
                 // if card already in addHC, just remove it there
