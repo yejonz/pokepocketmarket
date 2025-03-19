@@ -1,13 +1,9 @@
 import { Card } from "@/components/ui/card";
 import ImageFromStorage from "../../firebase/imageFromStorage";
 import { ArrowRight, X } from "lucide-react";
-import { DocumentReference, getFirestore, Timestamp } from "firebase/firestore";
-import { app } from "../../firebase/firebaseConfig";
-import { getAuth } from "firebase/auth";
+import { DocumentData, DocumentReference, Timestamp } from "firebase/firestore";
 import { timeAgo } from "./timeAgo";
 import { Button } from "@/components/ui/button";
-
-const db = getFirestore(app)
 
 interface ReqData { 
   friendCode: string, 
@@ -19,8 +15,8 @@ interface ReqData {
   reqRef: DocumentReference
 }
 
-export default function InboxDisplay({ data, deleteReq }: { data: ReqData, deleteReq: Function }) { 
-    const auth = getAuth()
+export default function InboxDisplay({ data, deleteReq }: { data: ReqData, 
+  deleteReq: (docRef: DocumentReference<DocumentData, DocumentData>) => void }) { 
     return (
         <div className="m-4">
           <Card className="flex p-4 relative">

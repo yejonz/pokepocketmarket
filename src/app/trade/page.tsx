@@ -3,7 +3,6 @@
 import {
   Pagination,
   PaginationContent,
-  PaginationEllipsis,
   PaginationItem,
   PaginationNext,
   PaginationPrevious,
@@ -12,10 +11,7 @@ import MatchDisplay from "@/my_components/matchDisplay";
 import { getAuth, onAuthStateChanged } from "firebase/auth";
 import { useEffect, useState } from "react";
 import { fetchAllUsersData, findBestMatches } from "../../../firebase/matchUtils";
-import { getFirestore, Timestamp } from "firebase/firestore";
-import { app } from "../../../firebase/firebaseConfig";
-
-const db = getFirestore(app)
+import { Timestamp } from "firebase/firestore";
 
 interface MatchData { 
   userId: string, 
