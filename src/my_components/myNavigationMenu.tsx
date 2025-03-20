@@ -10,6 +10,7 @@ import {
 import { cn } from "@/lib/utils"
 import Link from "next/link"
 import React from "react"
+import GoogleButton from "../../firebase/googleButton"
 
 const listingComponents: { title: string; href: string }[] = [
   {
@@ -62,7 +63,7 @@ ListItem.displayName = "ListItem"
 
 export default function MyNavigationMenu() {
   return (
-    <div className="flex justify-between items-center w-full">
+    <div className="flex justify-between items-center w-full p-2">
       <NavigationMenu>
         <NavigationMenuList>
           <NavigationMenuItem>
@@ -72,41 +73,49 @@ export default function MyNavigationMenu() {
           </NavigationMenuItem>
         </NavigationMenuList>
       </NavigationMenu>
+      <div className="flex">
+        <NavigationMenu>
+          <NavigationMenuList>
+            <NavigationMenuItem>
+              <NavigationMenuTrigger>Requests</NavigationMenuTrigger>
+              <NavigationMenuContent>
+                <ul className="flex flex-col w-20 gap-1 p-1">
+                  {requestsComponents.map((component) => (
+                    <ListItem key={component.title} title={component.title} href={component.href}></ListItem>
+                  ))}
+                </ul>
+              </NavigationMenuContent>
+            </NavigationMenuItem>
+          </NavigationMenuList>
+        </NavigationMenu>
+        <NavigationMenu>
+          <NavigationMenuList>
+            <NavigationMenuItem>
+              <Link href="/trade" legacyBehavior passHref>
+                <NavigationMenuLink className={navigationMenuTriggerStyle()}>Trade</NavigationMenuLink>
+              </Link>
+            </NavigationMenuItem>
+          </NavigationMenuList>
+        </NavigationMenu>
+        <NavigationMenu>
+          <NavigationMenuList>
+            <NavigationMenuItem>
+              <NavigationMenuTrigger>Listing</NavigationMenuTrigger>
+              <NavigationMenuContent>
+                <ul className="flex flex-col w-28 gap-1 p-1">
+                  {listingComponents.map((component) => (
+                    <ListItem key={component.title} title={component.title} href={component.href}></ListItem>
+                  ))}
+                </ul>
+              </NavigationMenuContent>
+            </NavigationMenuItem>
+          </NavigationMenuList>
+        </NavigationMenu>
+      </div>
       <NavigationMenu>
         <NavigationMenuList>
           <NavigationMenuItem>
-            <NavigationMenuTrigger>Requests</NavigationMenuTrigger>
-            <NavigationMenuContent>
-              <ul className="flex flex-col w-20 gap-1 p-1">
-                {requestsComponents.map((component) => (
-                  <ListItem key={component.title} title={component.title} href={component.href}></ListItem>
-                ))}
-              </ul>
-            </NavigationMenuContent>
-          </NavigationMenuItem>
-        </NavigationMenuList>
-      </NavigationMenu>
-      <NavigationMenu className="flex-1 justify-end">
-        <NavigationMenuList>
-          <NavigationMenuItem>
-            <NavigationMenuTrigger>Listing</NavigationMenuTrigger>
-            <NavigationMenuContent>
-              <ul className="flex flex-col w-28 gap-1 p-1">
-                {listingComponents.map((component) => (
-                  <ListItem key={component.title} title={component.title} href={component.href}></ListItem>
-                ))}
-              </ul>
-            </NavigationMenuContent>
-          </NavigationMenuItem>
-          <NavigationMenuItem>
-            <Link href="/trade" legacyBehavior passHref>
-              <NavigationMenuLink className={navigationMenuTriggerStyle()}>Trade</NavigationMenuLink>
-            </Link>
-          </NavigationMenuItem>
-          <NavigationMenuItem>
-            <Link href="/signin" legacyBehavior passHref>
-              <NavigationMenuLink className={navigationMenuTriggerStyle()}>Sign In</NavigationMenuLink>
-            </Link>
+            <GoogleButton />
           </NavigationMenuItem>
         </NavigationMenuList>
       </NavigationMenu>

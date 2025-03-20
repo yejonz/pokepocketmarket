@@ -8,20 +8,20 @@ import { useContext, useState } from "react";
 import UserContext from "../contexts/UserContext";
 import { CardStateContext } from "../contexts/CardStateContext";
 
+// Cooldown for save changes
+let lastUpdate = 0;
+const RATE_LIMIT = 5000;
+
 export default function WCSaveChangesButton() {
     const user = useContext(UserContext)
     const cardState = useContext(CardStateContext)
     const [saveMsg, setSaveMsg] = useState("")
 
-    // Cooldown for save changes
-    let lastUpdate = 0;
-    const RATE_LIMIT = 5000;
-
     // Takes user and code, adds card to user's "haveCards" array
     async function saveChanges(user : User | null) {
       const now = Date.now();
       if (!(now - lastUpdate > RATE_LIMIT)) {
-        setSaveMsg("Cooldown: ")
+        setSaveMsg("Cooldown: " + ((RATE_LIMIT - now + lastUpdate)/1000).toFixed(1) + "s")
       }
       else if ((cardState?.WCcombinedArr.length || 41) > 40) {
         setSaveMsg("Card limit exceeded.")

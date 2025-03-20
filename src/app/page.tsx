@@ -1,11 +1,9 @@
-import GoogleButton from "../../firebase/googleButton";
+import FullCardScrollBanner from "@/my_components/fullCardScrollBanner";
 
-const Home = () => {
+export default function Home() {
   return (
     <div>
-      <GoogleButton />
+      <FullCardScrollBanner />
     </div>
-  );
-};
-
-export default Home;
+  )
+}
