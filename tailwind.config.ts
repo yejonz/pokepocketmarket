@@ -12,45 +12,45 @@ export default {
 	theme: {
     	extend: {
     		colors: {
-    			background: 'rgb(var(--background))',
-    			foreground: 'rgb(var(--foreground))',
+    			background: 'hsl(var(--background))',
+    			foreground: 'hsl(var(--foreground))',
     			card: {
-    				DEFAULT: 'rgb(var(--card))',
-    				foreground: 'rgb(var(--card-foreground))'
+    				DEFAULT: 'hsl(var(--card))',
+    				foreground: 'hsl(var(--card-foreground))'
     			},
     			popover: {
-    				DEFAULT: 'rgb(var(--popover))',
-    				foreground: 'rgb(var(--popover-foreground))'
+    				DEFAULT: 'hsl(var(--popover))',
+    				foreground: 'hsl(var(--popover-foreground))'
     			},
     			primary: {
-    				DEFAULT: 'rgb(var(--primary))',
-    				foreground: 'rgb(var(--primary-foreground))'
+    				DEFAULT: 'hsl(var(--primary))',
+    				foreground: 'hsl(var(--primary-foreground))'
     			},
     			secondary: {
-    				DEFAULT: 'rgb(var(--secondary))',
-    				foreground: 'rgb(var(--secondary-foreground))'
+    				DEFAULT: 'hsl(var(--secondary))',
+    				foreground: 'hsl(var(--secondary-foreground))'
     			},
     			muted: {
-    				DEFAULT: 'rgb(var(--muted))',
-    				foreground: 'rgb(var(--muted-foreground))'
+    				DEFAULT: 'hsl(var(--muted))',
+    				foreground: 'hsl(var(--muted-foreground))'
     			},
     			accent: {
     				DEFAULT: 'hsl(var(--accent))',
     				foreground: 'hsl(var(--accent-foreground))'
     			},
     			destructive: {
-    				DEFAULT: 'rgb(var(--destructive))',
-    				foreground: 'rgb(var(--destructive-foreground))'
+    				DEFAULT: 'hsl(var(--destructive))',
+    				foreground: 'hsl(var(--destructive-foreground))'
     			},
-    			border: 'rgb(var(--border))',
-    			input: 'rgb(var(--input))',
-    			ring: 'rgb(var(--ring))',
+    			border: 'hsl(var(--border))',
+    			input: 'hsl(var(--input))',
+    			ring: 'hsl(var(--ring))',
     			chart: {
-    				'1': 'rgb(var(--chart-1))',
-    				'2': 'rgb(var(--chart-2))',
-    				'3': 'rgb(var(--chart-3))',
-    				'4': 'rgb(var(--chart-4))',
-    				'5': 'rgb(var(--chart-5))'
+    				'1': 'hsl(var(--chart-1))',
+    				'2': 'hsl(var(--chart-2))',
+    				'3': 'hsl(var(--chart-3))',
+    				'4': 'hsl(var(--chart-4))',
+    				'5': 'hsl(var(--chart-5))'
     			}
     		},
     		borderRadius: {

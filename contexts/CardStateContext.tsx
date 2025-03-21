@@ -33,7 +33,7 @@ const CardStateProvider = ({ children }: { children: ReactNode }) => {
   const WCcombinedArr = useMemo(() => [...wantArr, ...addWC], [wantArr, addWC]);
 
   // Card Measurement Parameters
-  const cardWidth = 9;
+  const cardWidth = 8;
   const cardWidthMode = 'rem';
   const cardsPerRow = 5;
 
