@@ -23,8 +23,8 @@ export default function WCSaveChangesButton() {
       if (!(now - lastUpdate > RATE_LIMIT)) {
         setSaveMsg("Cooldown: " + ((RATE_LIMIT - now + lastUpdate)/1000).toFixed(1) + "s")
       }
-      else if ((cardState?.WCcombinedArr.length || 41) > 40) {
-        setSaveMsg("Card limit exceeded.")
+      else if ((cardState?.WCcombinedArr?.length || 0) > 40) {
+        setSaveMsg("Card limit exceeded.");
       }
       else if (user) {
         lastUpdate = now
