@@ -1,7 +1,6 @@
 'use client'
 
 import { Card } from "@/components/ui/card";
-import ImageFromStorage from "../../firebase/imageFromStorage";
 import { ArrowRight } from "lucide-react";
 import { useEffect, useRef, useState } from "react";
 import {
@@ -15,6 +14,7 @@ import { doc, getDoc, getFirestore, serverTimestamp, setDoc, Timestamp } from "f
 import { app } from "../../firebase/firebaseConfig";
 import { getAuth } from "firebase/auth";
 import { timeAgo } from "./timeAgo";
+import ImageFromStorageFade from "./imageFromStorageFade";
 
 const db = getFirestore(app)
 
@@ -155,8 +155,6 @@ export default function MatchDisplay({ data }: { data: MatchData }) {
         e.stopPropagation()
     }
 
-    
-
     return (
         <div className="m-4">
             <Accordion type="single" collapsible value={accVal}>
@@ -169,7 +167,7 @@ export default function MatchDisplay({ data }: { data: MatchData }) {
                                         <div key={card} style={{ width: `${cardWidth}${cardWidthMode}`, maxWidth: '294px', margin: '.25rem' }}>    
                                             <div onClick={() => selectHaveCard(card)}>
                                                 <div className={card === selectHC ? "border-2 border-black" : ""}>
-                                                    <ImageFromStorage key={card} fileName={card} />
+                                                    <ImageFromStorageFade key={card} fileName={card} />
                                                 </div>
                                             </div>
                                         </div>    
@@ -183,7 +181,7 @@ export default function MatchDisplay({ data }: { data: MatchData }) {
                                         <div key={card} style={{ width: `${cardWidth}${cardWidthMode}`, maxWidth: '294px', margin: '.25rem' }}>
                                             <div onClick={() => selectWantCard(card)}>
                                                 <div className={card === selectWC ? "border-2 border-black" : ""}>
-                                                    <ImageFromStorage key={card} fileName={card} />
+                                                    <ImageFromStorageFade key={card} fileName={card} />
                                                 </div>
                                             </div>
                                         </div>    

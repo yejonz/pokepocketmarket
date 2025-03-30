@@ -3,7 +3,7 @@ import UserContext from "../contexts/UserContext";
 import { CardStateContext } from "../contexts/CardStateContext";
 import { app } from "./firebaseConfig";
 import { doc, getDoc, getFirestore } from "firebase/firestore";
-import ImageFromStorage from "./imageFromStorage";
+import ImageFromStorageFade from "@/my_components/imageFromStorageFade";
 
 export default function WantCards() {
     // take in UserContext from parent
@@ -56,7 +56,7 @@ export default function WantCards() {
                 onAuxClick={() => removeWantCards(card)}
             >
                 <div style={{ width: `${cardWidth}${cardWidthMode}`, maxWidth: '294px'}}>
-                    <ImageFromStorage fileName={card} />
+                    <ImageFromStorageFade fileName={card} />
                 </div>
             </li>
             ))}

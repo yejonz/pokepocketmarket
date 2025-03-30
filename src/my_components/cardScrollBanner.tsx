@@ -120,7 +120,7 @@ export function CardScrollBanner({
           {duplicatedTopItems.map((item, idx) => (
             <div
               key={`top-${item.id}-${idx}`}
-              className="flex items-center justify-center p-2 h-[370px] w-[264px] shrink-0"
+              className="flex items-center p-2 h-[370px] w-[264px] shrink-0"
             >
               {item.content}
             </div>
@@ -134,7 +134,7 @@ export function CardScrollBanner({
           {duplicatedBottomItems.map((item, idx) => (
             <div
               key={`bottom-${item.id}-${idx}`}
-              className="flex items-center justify-center p-2 h-[370px] w-[264px] shrink-0"
+              className="flex items-center p-2 h-[370px] w-[264px] shrink-0"
             >
               {item.content}
             </div>

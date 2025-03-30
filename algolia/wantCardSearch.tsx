@@ -2,9 +2,9 @@ import { liteClient as algoliasearch } from 'algoliasearch/lite';
 import { InstantSearch, SearchBox, HitsPerPage, Pagination } from 'react-instantsearch';
 import { useHits, UseHitsProps } from 'react-instantsearch';
 import 'instantsearch.css/themes/satellite.css'
-import ImageFromStorage from '../firebase/imageFromStorage';
 import { useContext } from 'react';
 import { CardStateContext } from '../contexts/CardStateContext';
+import ImageFromStorageFade from '@/my_components/imageFromStorageFade';
 
 const applicationID = process.env.NEXT_PUBLIC_ALGOLIA_APPLICATIONID + "";
 const searchAPIKey = process.env.NEXT_PUBLIC_ALGOLIA_SEARCHAPIKEY + "";
@@ -31,7 +31,7 @@ function CustomHits(props: UseHitsProps) {
           }}
         >
           <div style={{ width: `${cardWidth}${cardWidthMode}`, maxWidth: '294px'}}>
-            <ImageFromStorage fileName={hit.ImgNum}/>
+            <ImageFromStorageFade fileName={hit.ImgNum}/>
           </div>
         </li>
       ))}

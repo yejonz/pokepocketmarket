@@ -15,7 +15,7 @@ export default function ImageFromStorage({fileName} : {fileName : string}) {
     
     if (imageURL) {
         return (
-            <img src={imageURL}/>
+            <img className="rounded-md object-cover" src={imageURL}/>
         ) 
     }
     return <div />
