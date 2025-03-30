@@ -3,12 +3,16 @@
 import { getAuth, GoogleAuthProvider, signInWithPopup, signInWithRedirect } from "firebase/auth";
 import { app } from './firebaseConfig';
 import { Button } from "@/components/ui/button";
+import { UserContext } from "../contexts/UserContext";
+import { useContext } from "react";
 
 export default function GoogleButton() {
+  const {user} = useContext(UserContext)
+
   function handleSignIn() {
     const provider = new GoogleAuthProvider();
     const auth = getAuth(app);
-
+    
     // Always set redirect URL to home page
     provider.setCustomParameters({
       redirect_uri: window.location.origin + "/"
@@ -27,6 +31,6 @@ export default function GoogleButton() {
   };
 
   return <Button onClick={handleSignIn}>
-    Sign In
+    {user ? 'Switch Account' : 'Sign In'}
   </Button>
 }
