@@ -98,15 +98,15 @@ export default function Home () {
     return (
       <Card className="p-5 pr-20 pl-20 w-fit mx-auto mt-20">
         <h1 className="justify-self-center text-4xl mt-10 font-mono">No Trades Found.</h1>
-        <p className="justify-self-center text-s font-mono italic text-gray-500 mt-5 mb-10">Try expanding your search by adding cards to Have Cards or Want Cards under "Listing"</p>
+        <p className="justify-self-center text-s font-mono italic text-gray-500 mt-5 mb-10">Try expanding your search by adding cards to Have Cards or Want Cards under Listing</p>
       </Card>
     )
   }
 
   return (
     <Card className="p-5 pr-20 pl-20 w-fit mx-auto mt-20">
-        <h1 className="justify-self-center text-4xl mt-10 font-mono">Not signed in.</h1>
-        <p className="justify-self-center text-s font-mono italic text-gray-500 mt-5 mb-10">Please sign in to see your trades</p>
-      </Card>
+      <h1 className="justify-self-center text-4xl mt-10 font-mono">Not signed in.</h1>
+      <p className="justify-self-center text-s font-mono italic text-gray-500 mt-5 mb-10">Please sign in to see your trades</p>
+    </Card>
   )
 }

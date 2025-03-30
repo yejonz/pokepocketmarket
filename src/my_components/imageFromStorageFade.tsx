@@ -4,6 +4,7 @@ import type React from "react"
 import { useState, useEffect } from "react"
 import { getStorage, ref, getDownloadURL } from "firebase/storage"
 import { app } from "../../firebase/firebaseConfig"
+import Image from "next/image"
 
 const ImageFromStorageFade= ({ fileName } : { fileName : string }) => {
     const [imageURL, setImageURL] = useState("")
@@ -21,7 +22,8 @@ const ImageFromStorageFade= ({ fileName } : { fileName : string }) => {
     }, [fileName])
 
     if (imageURL) return (
-        <img
+        <Image
+        alt={imageURL}
         className={`rounded-md object-cover transition-opacity duration-1000 ease-in-out ${fadeIn ? "opacity-100" : "opacity-0"}`}
         src={imageURL}
         />
