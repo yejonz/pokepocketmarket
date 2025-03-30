@@ -33,7 +33,7 @@ export async function fetchAllUsersData() {
     return usersData
 }
 
-export function findBestMatches(userId: string, allUsersData: { [key : string] : UserData }) {
+export function findBestMatches(userId: string, allUsersData: { [key : string] : UserData }, sortBy: string) {
     const user = allUsersData[userId]
     const userHaveCards = new Set(user.haveCards)
     const userWantCards = new Set(user.wantCards)
@@ -56,16 +56,19 @@ export function findBestMatches(userId: string, allUsersData: { [key : string] :
             }
         })
     return results
+        // filter out trades where there isn't anything the user wants
         .filter(a => a.userWantsOtherHas.length > 0)
         .sort((a, b) => {
-        // first, sort by which has ANY userHasCount
+        // first, prioritize trades where there is something the user can trade
         if (!a.userHasOtherWants.length) {
             return 1
         }
-        else if (!b.userHasOtherWants.length) {
-            return -1
+
+        // second, sort by how many wanted cards the other has or most recently active
+        if (sortBy == "mostrecent") {
+            return b.lastActive.toMillis() - a.lastActive.toMillis()
         }
-        // second, sort by how many wanted cards the other has
+        // by default, sort by wanted cards
         return b.userWantsOtherHas.length - a.userWantsOtherHas.length
     })
 }

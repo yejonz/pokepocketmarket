@@ -61,7 +61,7 @@ export default function Home () {
             }
           });
           
-          setSent(sentData);
+          setSent(sentData.reverse());
         }
 
         setLoading(false)
@@ -82,39 +82,42 @@ export default function Home () {
 
   if (sent) {
     if (sent.length) {
-      <div>
+      return (
         <div>
-          <ol className="flex flex-col items-center">
-            {(sent?.slice(pgnStart, pgnStart + reqsPerPage) || []).map((data) => (
-              <li key={data.friendCode}>
-                <SentDisplay data={data} deleteReq={deleteReq}/>
-              </li>
-            ))}
-          </ol>
+          <div>
+            <ol className="flex flex-col items-center">
+              {(sent?.slice(pgnStart, pgnStart + reqsPerPage) || []).map((data, idx) => (
+                <li key={idx}>
+                  <SentDisplay data={data} deleteReq={deleteReq}/>
+                </li>
+              ))}
+            </ol>
+          </div>
+          <div>
+            <Pagination>
+              <PaginationContent>
+                {pgnStart >= (reqsPerPage) && (
+                  <PaginationItem>
+                    <PaginationPrevious href="#" onClick={(e) => {
+                      e.preventDefault();
+                      pgnPrev();
+                    }}/>
+                  </PaginationItem>
+                )}
+                {pgnStart < ((sent || []).length - reqsPerPage) && (
+                  <PaginationItem>
+                    <PaginationNext href="#" onClick={(e) => {
+                      e.preventDefault();
+                      pgnNext();
+                    }}/>
+                  </PaginationItem>
+                )}
+              </PaginationContent>
+            </Pagination>
+          </div>     
         </div>
-        <div>
-          <Pagination>
-            <PaginationContent>
-              {pgnStart >= (reqsPerPage) && (
-                <PaginationItem>
-                  <PaginationPrevious href="#" onClick={(e) => {
-                    e.preventDefault();
-                    pgnPrev();
-                  }}/>
-                </PaginationItem>
-              )}
-              {pgnStart < ((sent || []).length - reqsPerPage) && (
-                <PaginationItem>
-                  <PaginationNext href="#" onClick={(e) => {
-                    e.preventDefault();
-                    pgnNext();
-                  }}/>
-                </PaginationItem>
-              )}
-            </PaginationContent>
-          </Pagination>
-        </div>     
-      </div>
+      )
+      
     }
 
     return (

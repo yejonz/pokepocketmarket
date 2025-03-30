@@ -13,6 +13,15 @@ import { fetchAllUsersData, findBestMatches } from "../../../firebase/matchUtils
 import { Timestamp } from "firebase/firestore";
 import { Card } from "@/components/ui/card";
 import { UserContext } from "../../../contexts/UserContext";
+import {
+  Select,
+  SelectContent,
+  SelectGroup,
+  SelectItem,
+  SelectLabel,
+  SelectTrigger,
+  SelectValue,
+} from "@/components/ui/select"
 
 interface MatchData { 
   userId: string, 
@@ -32,13 +41,14 @@ export default function Home () {
   const [matches, setMatches] = useState<MatchData[]>()
   const {user} = useContext(UserContext)
   const [loading, setLoading] = useState(true)
+  const [sortBy, setSortBy] = useState<string>("wantedcards")
   
   useEffect(() => {
     const fetchMatches = async () => {
       if (user) {
         try {
           const data = await fetchAllUsersData();
-          const matchesData = findBestMatches(user.uid, data);
+          const matchesData = findBestMatches(user.uid, data, sortBy);
           setMatches(matchesData);
         } catch (error) {
           console.error("Error fetching matches:", error);
@@ -49,7 +59,7 @@ export default function Home () {
     }
   
     fetchMatches();
-  }, [user]);
+  }, [user, sortBy]);
   
 
   function pgnPrev() {
@@ -68,6 +78,21 @@ export default function Home () {
     if (matches.length) {
       return (
         <div>
+          <Card className="flex flex-col p-5 pr-20 pl-20 w-fit mx-auto items-center">
+            <h1 className="text-4xl font-mono m-5">Trades</h1>
+            <Select onValueChange={setSortBy}>
+              <SelectTrigger className="w-40">
+                <SelectValue placeholder="Sort By" />
+              </SelectTrigger>
+              <SelectContent>
+                <SelectGroup>
+                  <SelectLabel>Sort By</SelectLabel>
+                  <SelectItem value="wantedcards">Wanted Cards</SelectItem>
+                  <SelectItem value="mostrecent">Most Recent</SelectItem>
+                </SelectGroup>
+              </SelectContent>
+            </Select>
+          </Card>
           <ol className="flex flex-col items-center">
             {(matches?.slice(pgnStart, pgnStart + matchesPerPage) || []).map((data) => (
               <li key={data.userId}>
