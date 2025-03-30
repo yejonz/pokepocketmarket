@@ -9,10 +9,19 @@ export default function GoogleButton() {
     const provider = new GoogleAuthProvider();
     const auth = getAuth(app);
 
-    // redirect option only set up for public host, use popup otherwise for development
+    // Always set redirect URL to home page
+    provider.setCustomParameters({
+      redirect_uri: window.location.origin + "/"
+    });
+
     if (window.location.host === 'localhost:3000') {
-      signInWithPopup(auth, provider);
+      // For local development, still use popup but redirect manually
+      signInWithPopup(auth, provider)
+        .then(() => {
+          window.location.href = "/";  // Redirect after successful popup login
+        });
     } else {
+      // For production, use redirect with explicit home page URL
       signInWithRedirect(auth, provider);
     }
   };
