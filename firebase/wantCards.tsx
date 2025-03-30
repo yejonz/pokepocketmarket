@@ -1,13 +1,13 @@
 import { useContext, useEffect } from "react";
-import UserContext from "../contexts/UserContext";
 import { CardStateContext } from "../contexts/CardStateContext";
 import { app } from "./firebaseConfig";
 import { doc, getDoc, getFirestore } from "firebase/firestore";
 import ImageFromStorageFade from "@/my_components/imageFromStorageFade";
+import { UserContext } from "../contexts/UserContext";
 
 export default function WantCards() {
     // take in UserContext from parent
-    const user = useContext(UserContext)
+    const {user} = useContext(UserContext)
     const cardState = useContext(CardStateContext)
     const cardWidth = cardState?.cardWidth || 9;
     const cardWidthMode = cardState?.cardWidthMode || 'rem';

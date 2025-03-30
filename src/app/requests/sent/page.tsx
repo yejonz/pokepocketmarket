@@ -7,12 +7,12 @@ import {
   PaginationNext,
   PaginationPrevious,
 } from "@/components/ui/pagination"
-import { getAuth, onAuthStateChanged } from "firebase/auth";
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { collection, deleteDoc, DocumentReference, getDocs, getFirestore, Timestamp } from "firebase/firestore";
 import { app } from "../../../../firebase/firebaseConfig";
 import SentDisplay from "@/my_components/sentDisplay";
 import { Card } from "@/components/ui/card";
+import { UserContext } from "../../../../contexts/UserContext";
 
 const db = getFirestore(app)
 
@@ -31,18 +31,18 @@ const reqsPerPage = 2
 
 export default function Home () {
   const [pgnStart, setPgnStart] = useState(0)
-  const [sent, setInbox] = useState<ReqData[]>()
+  const [sent, setSent] = useState<ReqData[]>()
+  const {user} = useContext(UserContext)
+  const [loading, setLoading] = useState(true)
 
   async function deleteReq (reqRef : DocumentReference) {
     await deleteDoc(reqRef)
-    setInbox(prevInbox => (prevInbox || []).filter(item => item.reqRef.id !== reqRef.id));
+    setSent(prevSent => (prevSent || []).filter(item => item.reqRef.id !== reqRef.id));
   }
   
   useEffect(() => {
-    const auth = getAuth();
-    const unsubscribe = onAuthStateChanged(auth, async (user) => {
-      if (user) {
-        try {
+      const fetchSent = async () => {
+        if (user) {
           const sentCollection = collection(db, 'requests', user.uid, 'sent');
           const sentSnap = await getDocs(sentCollection);
           const sentData = [] as ReqData[];
@@ -61,15 +61,14 @@ export default function Home () {
             }
           });
           
-          setInbox(sentData);
-        } catch (error) {
-          console.error("Failed to fetch sent requests: ", error);
+          setSent(sentData);
         }
+
+        setLoading(false)
       }
-    });
-  
-    return () => unsubscribe();
-  }, []);
+      
+      fetchSent()
+    })
 
   function pgnPrev() {
     setPgnStart(pgnStart - reqsPerPage)
@@ -126,10 +125,12 @@ export default function Home () {
     )
   }
 
-  return (
-    <Card className="p-5 pr-20 pl-20 w-fit mx-auto mt-20">
-        <h1 className="justify-self-center text-4xl mt-10 font-mono">Not signed in.</h1>
-        <p className="justify-self-center text-s font-mono italic text-gray-500 mt-5 mb-10">Please sign in to check your sent requests</p>
-      </Card>
-  )
+  if (!loading) {
+    return (
+      <Card className="p-5 pr-20 pl-20 w-fit mx-auto mt-20">
+          <h1 className="justify-self-center text-4xl mt-10 font-mono">Not signed in.</h1>
+          <p className="justify-self-center text-s font-mono italic text-gray-500 mt-5 mb-10">Please sign in to check your sent requests</p>
+        </Card>
+    )
+  }
 }

@@ -1,24 +1,23 @@
 'use client'
 
 import { Button } from "@/components/ui/button"
-import { User } from "firebase/auth";
 import { arrayRemove, arrayUnion, doc, getFirestore, updateDoc } from "firebase/firestore";
 import { app } from "./firebaseConfig";
 import { useContext, useState } from "react";
-import UserContext from "../contexts/UserContext";
 import { CardStateContext } from "../contexts/CardStateContext";
+import { UserContext } from "../contexts/UserContext";
 
 // Cooldown for save changes
 let lastUpdate = 0;
 const RATE_LIMIT = 5000;
 
 export default function HCSaveChangesButton() {
-    const user = useContext(UserContext)
+    const {user} = useContext(UserContext)
     const cardState = useContext(CardStateContext)
     const [saveMsg, setSaveMsg] = useState("")
 
     // Takes user and code, adds card to user's "haveCards" array
-    async function saveChanges(user : User | null) {
+    async function saveChanges() {
       const now = Date.now();
       if (!(now - lastUpdate > RATE_LIMIT)) {
         setSaveMsg("Cooldown: " + ((RATE_LIMIT - now + lastUpdate)/1000).toFixed(1) + "s")
@@ -50,7 +49,7 @@ export default function HCSaveChangesButton() {
 
     return (
       <div className="flex">
-        <Button onClick={() => saveChanges(user)}> Save Changes </Button>
+        <Button onClick={() => saveChanges()}> Save Changes </Button>
         <div className="ml-2">
           {saveMsg && 
             <div className={saveMsg == "Saved changes successfully." ? "italic text-green-600" : "italic text-red-600"}>

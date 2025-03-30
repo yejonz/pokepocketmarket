@@ -7,13 +7,12 @@ import { Button } from "@/components/ui/button"
 import { Form, FormControl, FormDescription, FormField, FormItem, FormLabel, FormMessage } from "@/components/ui/form"
 import { Input } from "@/components/ui/input"
 import { Textarea } from "@/components/ui/textarea"
-import { getAuth, onAuthStateChanged } from "firebase/auth"
 import { doc, getFirestore, setDoc } from "firebase/firestore"
 import { app } from "../../../../firebase/firebaseConfig"
-import { useEffect, useState } from "react"
+import { useContext } from "react"
 import { Card } from "@/components/ui/card"
+import { UserContext } from "../../../../contexts/UserContext"
 
-const auth = getAuth();
 const db = getFirestore(app)
 
 const formSchema = z.object({
@@ -36,7 +35,7 @@ const formSchema = z.object({
 })
 
 export default function ProfileForm() {
-    const [userExists, setUserExists] = useState(false)
+    const {user} = useContext(UserContext)
 
     const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
@@ -47,19 +46,7 @@ export default function ProfileForm() {
     },
     })
 
-    useEffect(() => {
-        const auth = getAuth();
-        const unsubscribe = onAuthStateChanged(auth, async (user) => {
-            if (user) {
-                setUserExists(true)
-            }
-        })
-        
-        return () => unsubscribe();
-    }, []);
-
     async function onSubmit(values: z.infer<typeof formSchema>) {
-        const user = auth.currentUser;
         if (user) {
             const tsRef = doc(db, 'users', user.uid);
             await setDoc(tsRef, { 
@@ -70,7 +57,7 @@ export default function ProfileForm() {
         }
     }
 
-    if (userExists) {
+    if (user) {
         return (
             <Form {...form}>
                 <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-8 p-10 w-fit mx-auto">
