@@ -1,7 +1,6 @@
 "use client"
 
 import type React from "react"
-
 import { useEffect, useRef, useState } from "react"
 
 export interface ScrollingBannerItem {
@@ -17,6 +16,9 @@ interface CardScrollBannerProps {
   subtitle?: string
   titleClassName?: string
   subtitleClassName?: string
+  buttonText?: string
+  buttonLink?: string
+  buttonClassName?: string
 }
 
 export function CardScrollBanner({
@@ -27,6 +29,9 @@ export function CardScrollBanner({
   subtitle = "Discover our latest additions",
   titleClassName = "",
   subtitleClassName = "",
+  buttonText = "Get Started",
+  buttonLink = "/get-started",
+  buttonClassName = "",
 }: CardScrollBannerProps) {
   const topRowRef = useRef<HTMLDivElement>(null)
   const bottomRowRef = useRef<HTMLDivElement>(null)
@@ -118,10 +123,7 @@ export function CardScrollBanner({
       <div className="mb-4 overflow-hidden">
         <div ref={topRowRef} className="flex items-center" style={{ gap: "16px" }}>
           {duplicatedTopItems.map((item, idx) => (
-            <div
-              key={`top-${item.id}-${idx}`}
-              className="flex items-center p-2 h-[370px] w-[264px] shrink-0"
-            >
+            <div key={`top-${item.id}-${idx}`} className="flex items-center p-2 h-[370px] w-[264px] shrink-0">
               {item.content}
             </div>
           ))}
@@ -132,24 +134,27 @@ export function CardScrollBanner({
       <div className="overflow-hidden">
         <div ref={bottomRowRef} className="flex items-center" style={{ gap: "16px" }}>
           {duplicatedBottomItems.map((item, idx) => (
-            <div
-              key={`bottom-${item.id}-${idx}`}
-              className="flex items-center p-2 h-[370px] w-[264px] shrink-0"
-            >
+            <div key={`bottom-${item.id}-${idx}`} className="flex items-center p-2 h-[370px] w-[264px] shrink-0">
               {item.content}
             </div>
           ))}
         </div>
       </div>
 
-      {/* Title and subtitle overlay */}
+      {/* Title and subtitle overlay with dark semi-transparent background */}
       <div className="absolute inset-0 flex flex-col items-center justify-center z-10 pointer-events-none">
-        <h2 className={`text-4xl font-bold text-white mb-2 text-center px-6 text-shadow-lg ${titleClassName}`}>
-          {title}
-        </h2>
-        <p className={`text-xl text-white/90 text-center max-w-2xl px-6 text-shadow-md ${subtitleClassName}`}>
-          {subtitle}
-        </p>
+        <div className="bg-black/60 px-12 py-8 rounded-lg backdrop-blur-sm">
+          <h2 className={`text-6xl font-bold text-white mb-2 text-center px-6 ${titleClassName}`}>{title}</h2>
+          <p className={`text-2xl text-white/90 text-center max-w-2xl px-6 mb-6 ${subtitleClassName}`}>{subtitle}</p>
+          <div className="flex justify-center">
+            <a
+              href={buttonLink}
+              className={`pointer-events-auto px-6 py-3 bg-green-600 hover:bg-green-700 text-white font-medium rounded-md transition-colors duration-200 text-lg ${buttonClassName}`}
+            >
+              {buttonText}
+            </a>
+          </div>
+        </div>
       </div>
 
       {/* Gradient fade effect with darker middle */}

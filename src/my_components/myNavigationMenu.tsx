@@ -14,16 +14,16 @@ import GoogleButton from "../../firebase/googleButton"
 
 const listingComponents: { title: string; href: string }[] = [
   {
+    title: "Info",
+    href: "/listing/info",
+  },
+  {
     title: "Have Cards",
     href: "/listing/have-cards",
   },
   {
     title: "Want Cards",
     href: "/listing/want-cards",
-  },
-  {
-    title: "Info",
-    href: "/listing/info",
   },
 ]
 
