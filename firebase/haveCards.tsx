@@ -16,23 +16,19 @@ export default function HaveCards() {
     // set haveCards once from the firestore
     useEffect(() => {
         if (user) {
-          const haveRef = doc(getFirestore(app), "users", user.uid);
+          const haveRef = doc(getFirestore(app), "users", user.uid)
           const fetchHaveCards = async () => {
-            try {
-              console.log("Fetching haveCards for user:", user.uid);
-              const docSnap = await getDoc(haveRef);
-              if (docSnap.exists()) {
-                const data = docSnap.data();
-                cardState?.setHaveArr(data?.haveCards || []);
-                console.log("Fetched haveCards:", data?.haveCards || []);
-              }
-            } catch (error) {
-              console.error("Error fetching document:", error);
+            console.log("Fetching haveCards for user:", user.uid)
+            const docSnap = await getDoc(haveRef)
+            if (docSnap.exists()) {
+              const data = docSnap.data()
+              cardState?.setHaveArr(data?.haveCards || [])
+              console.log("Fetched haveCards:", data?.haveCards || [])
             }
-          };
-          fetchHaveCards();
+          }
+          fetchHaveCards()
         }
-      }, [user]);
+      }, [user])
 
     function removeHaveCards (card : string) {
         if (cardState?.addHC.includes(card))

@@ -7,9 +7,9 @@ import { Button } from "@/components/ui/button"
 import { Form, FormControl, FormDescription, FormField, FormItem, FormLabel, FormMessage } from "@/components/ui/form"
 import { Input } from "@/components/ui/input"
 import { Textarea } from "@/components/ui/textarea"
-import { doc, getFirestore, setDoc } from "firebase/firestore"
+import { doc, getDoc, getFirestore, setDoc } from "firebase/firestore"
 import { app } from "../../../../firebase/firebaseConfig"
-import { useContext, useState } from "react"
+import { useContext, useEffect, useState } from "react"
 import { Card } from "@/components/ui/card"
 import { UserContext } from "../../../../contexts/UserContext"
 import { CheckCircle } from "lucide-react"
@@ -41,6 +41,7 @@ export default function ProfileForm() {
   const { user } = useContext(UserContext)
   const [isSubmitting, setIsSubmitting] = useState(false)
   const [submitSuccess, setSubmitSuccess] = useState(false)
+  const [isLoading, setIsLoading] = useState(true)
 
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
@@ -50,6 +51,31 @@ export default function ProfileForm() {
       listingNote: "",
     },
   })
+
+  useEffect(() => {
+    if (user) {
+      const infoRef = doc(db, "users", user.uid)
+      const fetchInfo = async () => {
+        setIsLoading(true)
+        try {
+          const docSnap = await getDoc(infoRef)
+          if (docSnap.exists()) {
+            const info = docSnap.data()
+            form.reset({
+              friendCode: info.friendCode || "",
+              discord: info.discord || "",
+              listingNote: info.note || "",
+            })
+          }
+        } catch (error) {
+          console.error("Error fetching user data:", error)
+        } finally {
+          setIsLoading(false)
+        }
+      }
+      fetchInfo()
+    }
+  }, [user, form])
 
   async function onSubmit(values: z.infer<typeof formSchema>) {
     if (user) {
@@ -66,8 +92,6 @@ export default function ProfileForm() {
           },
           { merge: true },
         )
-
-        // Show success message
         setSubmitSuccess(true)
       } catch (error) {
         console.error("Error updating profile:", error)
@@ -126,7 +150,7 @@ export default function ProfileForm() {
             )}
           />
           <div className="space-y-2">
-            <Button type="submit" disabled={isSubmitting} className="w-full">
+            <Button type="submit" disabled={isSubmitting || isLoading} className="w-full">
               {isSubmitting ? "Submitting..." : "Submit"}
             </Button>
 
@@ -151,4 +175,3 @@ export default function ProfileForm() {
     </Card>
   )
 }
-
