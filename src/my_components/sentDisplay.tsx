@@ -31,13 +31,13 @@ export default function SentDisplay({ data, deleteReq }: { data: ReqData,
             </Button>
     
             <div className="max-w-[294px] m-1 w-48">
-              <ImageFromStorageFade fileName={data.wantCard} />
+              <ImageFromStorageFade fileName={data.haveCard} />
             </div>
             <div className="content-center">
               <ArrowRight className="w-16 h-16" />
             </div>
             <div className="max-w-[294px] m-1 w-48">
-              <ImageFromStorageFade fileName={data.haveCard} />
+              <ImageFromStorageFade fileName={data.wantCard} />
             </div>
             <div className="m-1 w-96">
               <ol className="ml-4">
