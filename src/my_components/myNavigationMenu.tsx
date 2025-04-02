@@ -1,3 +1,5 @@
+"use client"
+
 import {
   NavigationMenu,
   NavigationMenuContent,
@@ -11,6 +13,10 @@ import { cn } from "@/lib/utils"
 import Link from "next/link"
 import React from "react"
 import GoogleButton from "../../firebase/googleButton"
+import { Menu } from "lucide-react"
+import { Button } from "@/components/ui/button"
+import { Sheet, SheetContent, SheetTrigger, SheetTitle } from "@/components/ui/sheet"
+import { useState, useEffect } from "react"
 
 const listingComponents: { title: string; href: string }[] = [
   {
@@ -35,7 +41,7 @@ const requestsComponents: { title: string; href: string }[] = [
   {
     title: "Sent",
     href: "/requests/sent",
-  }
+  },
 ]
 
 const ListItem = React.forwardRef<React.ElementRef<"a">, React.ComponentPropsWithoutRef<"a">>(
@@ -46,13 +52,13 @@ const ListItem = React.forwardRef<React.ElementRef<"a">, React.ComponentPropsWit
           <a
             ref={ref}
             className={cn(
-              "block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground",
+              "block select-none space-y-1 rounded-md p-2 sm:p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground",
               className,
             )}
             {...props}
           >
-            <div className="text-sm font-medium leading-none">{title}</div>
-            <p className="line-clamp-2 text-sm leading-snug text-muted-foreground">{children}</p>
+            <div className="text-xs sm:text-sm font-medium leading-none">{title}</div>
+            <p className="line-clamp-2 text-xs sm:text-sm leading-snug text-muted-foreground">{children}</p>
           </a>
         </NavigationMenuLink>
       </li>
@@ -61,25 +67,116 @@ const ListItem = React.forwardRef<React.ElementRef<"a">, React.ComponentPropsWit
 )
 ListItem.displayName = "ListItem"
 
-export default function MyNavigationMenu() {
+// Mobile navigation component
+function MobileNav() {
+  const [open, setOpen] = useState(false)
+
   return (
-    <div className="flex justify-between items-center w-full p-2">
-      <NavigationMenu>
-        <NavigationMenuList>
-          <NavigationMenuItem>
-            <Link href="/" legacyBehavior passHref>
-              <NavigationMenuLink className={navigationMenuTriggerStyle()}>Home</NavigationMenuLink>
-            </Link>
-          </NavigationMenuItem>
-        </NavigationMenuList>
-      </NavigationMenu>
-      <div className="flex">
+    <Sheet open={open} onOpenChange={setOpen}>
+      <SheetTrigger asChild>
+        <Button variant="ghost" size="icon" className="md:hidden">
+          <Menu className="h-5 w-5" />
+          <span className="sr-only">Toggle menu</span>
+        </Button>
+      </SheetTrigger>
+      <SheetContent side="left" className="w-[240px] sm:w-[300px]">
+        <SheetTitle className="sr-only">Navigation Menu</SheetTitle>
+        <nav className="flex flex-col gap-4 mt-8">
+          <Link
+            href="/"
+            onClick={() => setOpen(false)}
+            className="text-sm font-medium px-2 py-1 rounded-md hover:bg-accent"
+          >
+            Home
+          </Link>
+
+          <div>
+            <h4 className="font-medium mb-1 px-2">Requests</h4>
+            <ul className="pl-4 space-y-1">
+              {requestsComponents.map((item) => (
+                <li key={item.title}>
+                  <Link
+                    href={item.href}
+                    onClick={() => setOpen(false)}
+                    className="text-sm px-2 py-1 block rounded-md hover:bg-accent"
+                  >
+                    {item.title}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          <Link
+            href="/trade"
+            onClick={() => setOpen(false)}
+            className="text-sm font-medium px-2 py-1 rounded-md hover:bg-accent"
+          >
+            Trade
+          </Link>
+
+          <div>
+            <h4 className="font-medium mb-1 px-2">Listing</h4>
+            <ul className="pl-4 space-y-1">
+              {listingComponents.map((item) => (
+                <li key={item.title}>
+                  <Link
+                    href={item.href}
+                    onClick={() => setOpen(false)}
+                    className="text-sm px-2 py-1 block rounded-md hover:bg-accent"
+                  >
+                    {item.title}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
+        </nav>
+      </SheetContent>
+    </Sheet>
+  )
+}
+
+export default function MyNavigationMenu() {
+  const [isMounted, setIsMounted] = useState(false)
+
+  // Prevent hydration mismatch
+  useEffect(() => {
+    setIsMounted(true)
+  }, [])
+
+  if (!isMounted) {
+    return null
+  }
+
+  return (
+    <div className="flex justify-between items-center w-full p-1 sm:p-2">
+      {/* Left section - Home on desktop, hamburger on mobile */}
+      <div className="flex items-center">
+        <MobileNav />
+        <NavigationMenu className="hidden md:flex">
+          <NavigationMenuList>
+            <NavigationMenuItem>
+              <Link href="/" legacyBehavior passHref>
+                <NavigationMenuLink className={cn(navigationMenuTriggerStyle(), "text-xs sm:text-sm md:text-base")}>
+                  Home
+                </NavigationMenuLink>
+              </Link>
+            </NavigationMenuItem>
+          </NavigationMenuList>
+        </NavigationMenu>
+      </div>
+
+      {/* Middle section - hidden on mobile, visible on md screens and up */}
+      <div className="hidden md:flex">
         <NavigationMenu>
           <NavigationMenuList>
             <NavigationMenuItem>
-              <NavigationMenuTrigger>Requests</NavigationMenuTrigger>
+              <NavigationMenuTrigger className="text-xs sm:text-sm md:text-base px-2 sm:px-3 md:px-4 py-1 sm:py-1.5 md:py-2">
+                Requests
+              </NavigationMenuTrigger>
               <NavigationMenuContent>
-                <ul className="flex flex-col w-20 gap-1 p-1">
+                <ul className="flex flex-col w-[100px] sm:w-[120px] gap-1 p-1">
                   {requestsComponents.map((component) => (
                     <ListItem key={component.title} title={component.title} href={component.href}></ListItem>
                   ))}
@@ -92,7 +189,14 @@ export default function MyNavigationMenu() {
           <NavigationMenuList>
             <NavigationMenuItem>
               <Link href="/trade" legacyBehavior passHref>
-                <NavigationMenuLink className={navigationMenuTriggerStyle()}>Trade</NavigationMenuLink>
+                <NavigationMenuLink
+                  className={cn(
+                    navigationMenuTriggerStyle(),
+                    "text-xs sm:text-sm md:text-base px-2 sm:px-3 md:px-4 py-1 sm:py-1.5 md:py-2",
+                  )}
+                >
+                  Trade
+                </NavigationMenuLink>
               </Link>
             </NavigationMenuItem>
           </NavigationMenuList>
@@ -100,9 +204,11 @@ export default function MyNavigationMenu() {
         <NavigationMenu>
           <NavigationMenuList>
             <NavigationMenuItem>
-              <NavigationMenuTrigger>Listing</NavigationMenuTrigger>
+              <NavigationMenuTrigger className="text-xs sm:text-sm md:text-base px-2 sm:px-3 md:px-4 py-1 sm:py-1.5 md:py-2">
+                Listing
+              </NavigationMenuTrigger>
               <NavigationMenuContent>
-                <ul className="flex flex-col w-28 gap-1 p-1">
+                <ul className="flex flex-col w-[120px] sm:w-[140px] gap-1 p-1">
                   {listingComponents.map((component) => (
                     <ListItem key={component.title} title={component.title} href={component.href}></ListItem>
                   ))}
@@ -112,14 +218,17 @@ export default function MyNavigationMenu() {
           </NavigationMenuList>
         </NavigationMenu>
       </div>
-      <NavigationMenu>
-        <NavigationMenuList>
-          <NavigationMenuItem>
-            <GoogleButton />
-          </NavigationMenuItem>
-        </NavigationMenuList>
-      </NavigationMenu>
+
+      {/* Right section - GoogleButton */}
+      <div className="flex">
+        <NavigationMenu>
+          <NavigationMenuList>
+            <NavigationMenuItem>
+              <GoogleButton />
+            </NavigationMenuItem>
+          </NavigationMenuList>
+        </NavigationMenu>
+      </div>
     </div>
   )
 }
-
