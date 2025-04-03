@@ -22,12 +22,10 @@ const formSchema = z.object({
   }),
   discord: z
     .string()
-    .length(18, {
-      message: "Your ID should be 18 digits long.",
+    .refine((val) => val === "" || (val.length === 18 && /^\d+$/.test(val)), {
+      message: "Discord ID should be 18 digits or left empty.",
     })
-    .regex(/^\d+$/, {
-      message: "Your ID should contain only numbers.",
-    })
+    .transform((val) => (val === "" ? undefined : val))
     .optional(),
   listingNote: z
     .string()
@@ -87,7 +85,7 @@ export default function ProfileForm() {
           tsRef,
           {
             friendCode: values.friendCode,
-            discord: values.discord,
+            discord: values.discord === undefined ? null : values.discord,
             note: values.listingNote,
           },
           { merge: true },
@@ -175,3 +173,4 @@ export default function ProfileForm() {
     </Card>
   )
 }
+
