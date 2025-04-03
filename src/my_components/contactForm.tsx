@@ -93,7 +93,7 @@ export default function ContactForm() {
       <CardHeader className="border-b border-gray-200">
         <CardTitle className="text-black">Contact Us</CardTitle>
         <CardDescription className="text-gray-600">
-          Fill out the form below to send us a message. We'll get back to you as soon as possible.
+          Fill out the form below to send us a message. We&apos;ll get back to you as soon as possible.
         </CardDescription>
       </CardHeader>
       <CardContent className="bg-white text-black pt-6">
