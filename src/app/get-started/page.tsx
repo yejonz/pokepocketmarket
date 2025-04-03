@@ -13,7 +13,7 @@ return (
             </p>
             <h2 className="flex gap-2 items-center">2. &nbsp;My Listing <ArrowRight /> <a href="/listing/info" className="text-blue-500 underline" target="_blank">Profile</a> </h2>
             <p className="text-xl">
-                This information will be displayed to other users that see your listing. Fill in your in-game friend code. Optionally, you can also fill in the Discord ID and Note fields for other ways to contact you or information about your listing. Submit your info when you're ready.
+                This information will be displayed to other users that see your listing. Fill in your in-game friend code. Optionally, you can also fill in the Discord ID and Note fields for other ways to contact you or information about your listing. Submit your info when you&apos;re ready.
             </p>
             <h2 className="flex gap-2 items-center">3. &nbsp;My Listing <ArrowRight /> <a href="/listing/have-cards" className="text-blue-500 underline" target="_blank">Have Cards</a></h2>
             <p className="text-xl">
