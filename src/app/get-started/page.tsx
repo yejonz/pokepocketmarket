@@ -4,7 +4,7 @@ import GoogleButton from "../../../firebase/googleButton";
 export default function Home() {
 return (
     <div className="flex justify-center">
-        <div className="w-1/2 text-gray-700">
+        <div className="w-1/2 text-gray-700 mb-10">
             <h1 className="justify-self-center text-6xl font-bold"> Get Started </h1>
             <ol className="flex flex-col gap-4 text-3xl mt-10">
             <h2 className="flex gap-4">1. <GoogleButton /></h2>
