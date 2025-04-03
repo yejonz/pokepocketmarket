@@ -20,7 +20,7 @@ import { useState, useEffect } from "react"
 
 const listingComponents: { title: string; href: string }[] = [
   {
-    title: "Info",
+    title: "Profile",
     href: "/listing/info",
   },
   {
@@ -116,7 +116,7 @@ function MobileNav() {
           </Link>
 
           <div>
-            <h4 className="font-medium mb-1 px-2">Listing</h4>
+            <h4 className="font-medium mb-1 px-2">My Listing</h4>
             <ul className="pl-4 space-y-1">
               {listingComponents.map((item) => (
                 <li key={item.title}>
@@ -205,7 +205,7 @@ export default function MyNavigationMenu() {
           <NavigationMenuList>
             <NavigationMenuItem>
               <NavigationMenuTrigger className="text-xs sm:text-sm md:text-base px-2 sm:px-3 md:px-4 py-1 sm:py-1.5 md:py-2">
-                Listing
+                My Listing
               </NavigationMenuTrigger>
               <NavigationMenuContent>
                 <ul className="flex flex-col w-[120px] sm:w-[140px] gap-1 p-1">
