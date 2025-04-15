@@ -27,7 +27,7 @@ interface ReqData {
 }
 
 // Parameters
-const reqsPerPage = 2
+const reqsPerPage = 10
 
 export default function Home () {
   const [pgnStart, setPgnStart] = useState(0)

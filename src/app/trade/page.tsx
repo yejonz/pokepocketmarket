@@ -34,7 +34,7 @@ interface MatchData {
 }
 
 // Parameters
-const matchesPerPage = 2
+const matchesPerPage = 10
 
 export default function Home () {
   const [pgnStart, setPgnStart] = useState(0)
